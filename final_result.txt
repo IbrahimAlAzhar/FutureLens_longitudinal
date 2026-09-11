@@ -149,7 +149,6 @@ Topic | Title                                                              | Fir
 7     | Temporal trends in cited research (2014-2021)                      | 2012.0000  | 2022.0000 | 98.9305  | 99.4180 | 1025.0000 | 1031.0000        | 0.4876    | 0.1345      | 0.0017  | 0.3134  | 0.0405 | 0.1158
 15    | Attention-based sequence encoding for text representation learning | 2012.0000  | 2022.0000 | 100.0000 | 99.5150 | 1026.0000 | 1031.0000        | -0.4850   | -0.0289     | -0.0774 | 0.0085  | 0.2303 | 0.4187
 11    | System architecture overview with illustrative examples/figures    | 2012.0000  | 2022.0000 | 92.5134  | 92.8225 | 957.0000  | 1031.0000        | 0.3091    | 0.0684      | -0.1095 | 0.4112  | 0.5423 | 0.6380
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/activity_trends.csv. No missing significance test is invented.
 
 Input/reference topic overlap (descriptive; NOT extraction precision/recall)
 Reference provenance | Rows      | Scored    | Mean Jaccard
@@ -720,7 +719,6 @@ Topic | Title                                                                   
 18    | Table presents statistics, examples, and datasets from appendix                 | 2012.0000  | 2022.0000 | 17.1123 | 24.9273 | 257.0000 | 1031.0000        | 7.8150    | 0.2921      | -0.2069 | 1.1396  | 0.1646 | 0.2532
 12    | Analyzing sentence-level features in document pairs                             | 2012.0000  | 2022.0000 | 25.6684 | 26.0912 | 269.0000 | 1031.0000        | 0.4227    | -0.2881     | -0.8130 | 0.2413  | 0.4454 | 0.5240
 13    | Word embeddings and contextual vector representations                           | 2012.0000  | 2022.0000 | 22.9947 | 23.1814 | 239.0000 | 1031.0000        | 0.1867    | -0.9485     | -2.1952 | 0.3422  | 0.2183 | 0.3119
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/reference_trends.csv. No missing significance test is invented.
 
 ACTIVITY trends — largest absolute first/last prevalence changes
 Topic | Title                                                                           | First year | Last year | First %  | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
