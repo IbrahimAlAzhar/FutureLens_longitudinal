@@ -2,26 +2,26 @@
 # Shared launcher; called by each model/experiment PBS file.
 set -euo pipefail
 MODEL=${1:?model required}; EXPERIMENT=${2:-all}
-CODE_DIR=${CODE_DIR:-/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract}
+CODE_DIR=${CODE_DIR:-exp_curr_without_extract}
 cd "$CODE_DIR"
 set +u
 source activate image_lim_vllm_final
 set -u
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
-export HF_HOME=${HF_HOME:-/lstr/sahara/datalab-ml/ibrahim/hf_cache}
+export HF_HOME=${HF_HOME:-hf_cache}
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export no_proxy="127.0.0.1,localhost,::1,${no_proxy:-}"; export NO_PROXY="$no_proxy"
 export OMP_NUM_THREADS=${OMP_NUM_THREADS:-8} MKL_NUM_THREADS=${MKL_NUM_THREADS:-8}
 unset VLLM_API_KEY
 case "$MODEL" in
- gemma) DEFAULT_MODEL=/lstr/sahara/datalab-ml/ibrahim/models/gemma3_27b_it; QUANT=bnb;;
- qwen) DEFAULT_MODEL=/lstr/sahara/datalab-ml/ibrahim/models/qwen3_8b; QUANT=none;;
- mistral) DEFAULT_MODEL=/lstr/sahara/datalab-ml/ibrahim/models/mistral_small_3_1_24b_instruct; QUANT=bnb;;
+ gemma) DEFAULT_MODEL=gemma3_27b_it; QUANT=bnb;;
+ qwen) DEFAULT_MODEL=models/qwen3_8b; QUANT=none;;
+ mistral) DEFAULT_MODEL=models/mistral_small_3_1_24b_instruct; QUANT=bnb;;
  *) echo "Unknown model $MODEL"; exit 2;;
 esac
 MODEL_DIR=${MODEL_DIR:-$DEFAULT_MODEL}
-DATA_DIR=${DATA_DIR:-/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data}
+DATA_DIR=${DATA_DIR:-/futureScope/data}
 NUM_SAMPLES=${NUM_SAMPLES:-10} # --num-samples: per venue/year, -1 means all.
 RUN_ID=${RUN_ID:-${PBS_JOBID:-local}_$(date +%Y%m%dT%H%M%S)}
 OUT_DIR=${OUT_DIR:-$CODE_DIR/results/$MODEL/$EXPERIMENT/$RUN_ID}
@@ -35,7 +35,7 @@ METHODS=${METHODS:-"nmf lda bertopic"}
 read -r -a METHOD_ARRAY <<< "$METHODS"
 PREFLIGHT_EXTRA=()
 [[ "${NO_TOPIC_LABELS:-0}" == 1 ]] && PREFLIGHT_EXTRA+=(--no-topic-labels)
-python preflight.py --data-dir "$DATA_DIR" --model-dir "$MODEL_DIR" --methods "${METHOD_ARRAY[@]}" --embedding-model "${EMBEDDING_MODEL:-/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2}" "${PREFLIGHT_EXTRA[@]}"
+python preflight.py --data-dir "$DATA_DIR" --model-dir "$MODEL_DIR" --methods "${METHOD_ARRAY[@]}" --embedding-model "${EMBEDDING_MODEL:-models/all-MiniLM-L6-v2}" "${PREFLIGHT_EXTRA[@]}"
 python -m unittest discover -s tests -v
 VLLM_URL=http://127.0.0.1:8000/v1
 if [[ "${NO_TOPIC_LABELS:-0}" != 1 && "$EXPERIMENT" != forecast ]]; then
@@ -65,6 +65,6 @@ EXTRA=()
 [[ "${NO_TOPIC_LABELS:-0}" == 1 ]] && EXTRA+=(--no-topic-labels)
 python -u run_experiments.py --data-dir "$DATA_DIR" --out-dir "$OUT_DIR" --model "$MODEL" --model-dir "$MODEL_DIR" \
  --vllm-url "$VLLM_URL" --experiment "$EXPERIMENT" --num-samples "$NUM_SAMPLES" \
- --methods "${METHOD_ARRAY[@]}" --embedding-model "${EMBEDDING_MODEL:-/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2}" \
+ --methods "${METHOD_ARRAY[@]}" --embedding-model "${EMBEDDING_MODEL:-all-MiniLM-L6-v2}" \
  --context-length "$CONTEXT_LENGTH" --chunk-tokens "${CHUNK_TOKENS:-6000}" --max-tokens "${MAX_TOKENS:-1024}" \
  --num-topics "${NUM_TOPICS:-20}" --activity-source "${ACTIVITY_SOURCE:-input}" "${EXTRA[@]}"
