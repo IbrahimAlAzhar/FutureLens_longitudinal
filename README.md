@@ -1,4 +1,4 @@
-# FutureScope: existing references only
+# FutureLens: existing references only
 
 This independent package removes the extraction stage. It does not contain or import
 extraction.py, does not search backward for missing references, and does not generate
