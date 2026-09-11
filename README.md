@@ -9,7 +9,7 @@ or refine future-work references. The previous experiment_current folder is unto
 Upload exp_curr_without_extract.zip to the server, then:
 
 ```bash
-cd /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope
+cd futureScope
 unzip exp_curr_without_extract.zip
 cd exp_curr_without_extract
 ```
@@ -19,7 +19,7 @@ files will therefore live under your requested directory. No data or weights are
 
 ## Inputs
 
-Data directory: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data
+Data directory: data
 
 - ACL_12_updated.csv through ACL_22_updated.csv: input is abstract + col_1..col_6;
   existing reference is Future_Work. Concatenated Text is no longer required or used.
@@ -66,7 +66,7 @@ use the first seed. LLM labels are generated for the first descriptive seed only
 
 The existing local embedding model is expected at:
 
-/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2
+all-MiniLM-L6-v2
 
 Set EMBEDDING_MODEL in a PBS file if your downloaded model is elsewhere. It must be
 a complete SentenceTransformer directory. The jobs remain offline. If not already
