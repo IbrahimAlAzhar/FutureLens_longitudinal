@@ -24,9 +24,6 @@ qwen    | 216906.cm_20260910T211619 | acl   | 0.0000           | nmf seeds[0,1,2
 
 ====================================================================================================
 MODEL: gemma | RUN: 216904.cm_20260910T211608
-Path: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608
-Original run status: NO completion marker; partial snapshot
-Configuration: {"activity_source": "input", "bootstrap": 1000, "chat_template": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/chat_template.jinja", "chunk_tokens": 6000, "context_length": 16384, "data_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data", "dataset": "all", "embedding_model": "/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2", "experiment": "all", "horizons": [1, 2, 3], "max_features": 20000, "max_tokens": 1024, "methods": ["nmf", "lda", "bertopic"], "min_cluster_size": 10, "min_train_origins": 3, "model": "gemma", "model_dir": "/lstr/sahara/datalab-ml/ibrahim/models/gemma3_27b_it", "neurips_year_column": null, "no_topic_labels": false, "num_samples": -1, "num_topics": 20, "out_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608", "ridge_alpha": 0.01, "seed": 42, "seeds": [0, 1, 2, 3, 4], "trend_window": 3, "warmup_years": 3}
 
 --------------------------------------------------------------------------------
 SCOPE: ACL
@@ -45,13 +42,6 @@ acl   | 2019.0 | 753    | 550            | 203
 acl   | 2020.0 | 861    | 624            | 237              
 acl   | 2021.0 | 1165   | 814            | 351              
 acl   | 2022.0 | 1031   | 740            | 291              
-Coverage source: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/coverage.csv; total analyzed papers in this scope: 5655.
-Reference status: {"available": 4005, "missing": 1650, "fallback_used": false}
-Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/llm_topic_labels_and_human_template.csv.
-Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_1/training_assignments.csv; labels: absent.
-Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_2/training_assignments.csv; labels: absent.
-Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_3/training_assignments.csv; labels: absent.
-Seed 4 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_4/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_4/training_assignments.csv; labels: absent.
 
 NMF — available seeds (no missing seed is counted as zero)
 Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability        
@@ -134,7 +124,7 @@ Topic | Title                                                              | Fir
 18    | Data analysis and presentation of statistical results              | 2012.0000  | 2022.0000 | 17.1123 | 24.9273 | 257.0000 | 1031.0000        | 7.8150    | 0.2921      | -0.2069 | 1.1396  | 0.1646 | 0.2532
 12    | Sentence alignment and length analysis of text data                | 2012.0000  | 2022.0000 | 25.6684 | 26.0912 | 269.0000 | 1031.0000        | 0.4227    | -0.2881     | -0.8130 | 0.2413  | 0.4454 | 0.5240
 13    | Word embeddings and vector representations at different levels     | 2012.0000  | 2022.0000 | 22.9947 | 23.1814 | 239.0000 | 1031.0000        | 0.1867    | -0.9485     | -2.1952 | 0.3422  | 0.2183 | 0.3119
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/reference_trends.csv. No missing significance test is invented.
+
 
 ACTIVITY trends — largest absolute first/last prevalence changes
 Topic | Title                                                              | First year | Last year | First %  | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
@@ -189,10 +179,6 @@ Topic | Years | Spearman              | Mean absolute gap (fraction)
 17    | 11    | 0.29090909090909095   | 0.35567334976837395         
 18    | 11    | 0.7454545454545456    | 0.4567668276807169          
 19    | 11    | 0.5636363636363637    | 0.45021205194645036         
-Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/llm_topic_labels_and_human_template.csv.
-Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_1/training_assignments.csv; labels: absent.
-Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_2/training_assignments.csv; labels: absent.
-Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_3/training_assignments.csv; labels: absent.
 
 LDA — available seeds (no missing seed is counted as zero)
 Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability          
@@ -271,7 +257,7 @@ Topic | Title                                                          | First y
 4     | Syntactic and Semantic Parsing of Linguistic Structure         | 2012.0000  | 2022.0000 | 31.0160 | 28.6130 | 295.0000 | 1031.0000        | -2.4030   | -1.2310     | -2.0552 | -0.5140 | 0.0165 | 0.0473
 18    | Merging descending lists of real numbers                       | 2012.0000  | 2022.0000 | 32.6203 | 31.6198 | 326.0000 | 1031.0000        | -1.0005   | -0.9058     | -1.2849 | -0.1001 | 0.0264 | 0.0660
 17    | Named entity mention information status in news/social data    | 2012.0000  | 2022.0000 | 28.3422 | 29.2919 | 302.0000 | 1031.0000        | 0.9497    | -0.1784     | -0.8519 | 0.4183  | 0.5322 | 0.5423
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/reference_trends.csv. No missing significance test is invented.
+
 
 ACTIVITY trends — largest absolute first/last prevalence changes
 Topic | Title                                                          | First year | Last year | First % | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
@@ -296,7 +282,6 @@ Topic | Title                                                          | First y
 13    | Model score/loss evaluation and performance measurement        | 2012.0000  | 2022.0000 | 95.7219 | 94.4714 | 974.0000  | 1031.0000        | -1.2505   | -0.1962     | -0.4290 | 0.0366  | 0.0866 | 0.1237
 2     | Research methods and analysis of prior studies                 | 2012.0000  | 2022.0000 | 98.3957 | 99.5150 | 1026.0000 | 1031.0000        | 1.1193    | 0.1134      | -0.0174 | 0.4138  | 0.0602 | 0.0926
 8     | Large-scale data annotation for machine learning training      | 2012.0000  | 2022.0000 | 95.7219 | 95.8293 | 988.0000  | 1031.0000        | 0.1074    | 0.2581      | -0.0314 | 0.4622  | 0.0602 | 0.0926
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/activity_trends.csv. No missing significance test is invented.
 
 Input/reference topic overlap (descriptive; NOT extraction precision/recall)
 Reference provenance | Rows      | Scored    | Mean Jaccard
@@ -337,12 +322,6 @@ This acl snapshot contains NMF seeds 0,1,2,3,4; LDA seeds 0,1,2,3.
 Only the observed seeds contribute to reported summaries. Missing seeds/methods were not imputed.
 These artifacts support descriptive analysis only; no forecasting result is available.
 
-====================================================================================================
-MODEL: mistral | RUN: 216905.cm_20260910T211614
-Path: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614
-Original run status: NO completion marker; partial snapshot
-Configuration: {"activity_source": "input", "bootstrap": 1000, "chat_template": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/chat_template.jinja", "chunk_tokens": 6000, "context_length": 16384, "data_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data", "dataset": "all", "embedding_model": "/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2", "experiment": "all", "horizons": [1, 2, 3], "max_features": 20000, "max_tokens": 1024, "methods": ["nmf", "lda", "bertopic"], "min_cluster_size": 10, "min_train_origins": 3, "model": "mistral", "model_dir": "/lstr/sahara/datalab-ml/ibrahim/models/mistral_small_3_1_24b_instruct", "neurips_year_column": null, "no_topic_labels": false, "num_samples": -1, "num_topics": 20, "out_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614", "ridge_alpha": 0.01, "seed": 42, "seeds": [0, 1, 2, 3, 4], "trend_window": 3, "warmup_years": 3}
-
 --------------------------------------------------------------------------------
 SCOPE: ACL
 
@@ -360,13 +339,6 @@ acl   | 2019.0 | 753    | 550            | 203
 acl   | 2020.0 | 861    | 624            | 237              
 acl   | 2021.0 | 1165   | 814            | 351              
 acl   | 2022.0 | 1031   | 740            | 291              
-Coverage source: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/coverage.csv; total analyzed papers in this scope: 5655.
-Reference status: {"available": 4005, "missing": 1650, "fallback_used": false}
-Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/llm_topic_labels_and_human_template.csv.
-Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_1/training_assignments.csv; labels: absent.
-Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_2/training_assignments.csv; labels: absent.
-Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_3/training_assignments.csv; labels: absent.
-Seed 4 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_4/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_4/training_assignments.csv; labels: absent.
 
 NMF — available seeds (no missing seed is counted as zero)
 Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability        
@@ -449,7 +421,7 @@ Topic | Title                                            | First year | Last yea
 18    | Data Presentation in Research Papers             | 2012.0000  | 2022.0000 | 17.1123 | 24.9273 | 257.0000 | 1031.0000        | 7.8150    | 0.2921      | -0.2069 | 1.1396  | 0.1646 | 0.2532
 12    | Sentence Length in Document Pairs                | 2012.0000  | 2022.0000 | 25.6684 | 26.0912 | 269.0000 | 1031.0000        | 0.4227    | -0.2881     | -0.8130 | 0.2413  | 0.4454 | 0.5240
 13    | Contextual word embedding vectors                | 2012.0000  | 2022.0000 | 22.9947 | 23.1814 | 239.0000 | 1031.0000        | 0.1867    | -0.9485     | -2.1952 | 0.3422  | 0.2183 | 0.3119
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/reference_trends.csv. No missing significance test is invented.
+
 
 ACTIVITY trends — largest absolute first/last prevalence changes
 Topic | Title                                            | First year | Last year | First %  | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
@@ -474,7 +446,7 @@ Topic | Title                                            | First year | Last yea
 7     | Text as Data Misinterpretation 2014-2021         | 2012.0000  | 2022.0000 | 98.9305  | 99.4180 | 1025.0000 | 1031.0000        | 0.4876    | 0.1345      | 0.0017  | 0.3134  | 0.0405 | 0.1158
 15    | Text Encoder for Sequence Representation         | 2012.0000  | 2022.0000 | 100.0000 | 99.5150 | 1026.0000 | 1031.0000        | -0.4850   | -0.0289     | -0.0774 | 0.0085  | 0.2303 | 0.4187
 11    | Text as Data in Figures and Examples             | 2012.0000  | 2022.0000 | 92.5134  | 92.8225 | 957.0000  | 1031.0000        | 0.3091    | 0.0684      | -0.1095 | 0.4112  | 0.5423 | 0.6380
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/activity_trends.csv. No missing significance test is invented.
+
 
 Input/reference topic overlap (descriptive; NOT extraction precision/recall)
 Reference provenance | Rows      | Scored    | Mean Jaccard
@@ -504,10 +476,6 @@ Topic | Years | Spearman              | Mean absolute gap (fraction)
 17    | 11    | 0.29090909090909095   | 0.35567334976837395         
 18    | 11    | 0.7454545454545456    | 0.4567668276807169          
 19    | 11    | 0.5636363636363637    | 0.45021205194645036         
-Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/llm_topic_labels_and_human_template.csv.
-Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_1/training_assignments.csv; labels: absent.
-Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_2/training_assignments.csv; labels: absent.
-Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_3/training_assignments.csv; labels: absent.
 
 LDA — available seeds (no missing seed is counted as zero)
 Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability          
@@ -586,7 +554,7 @@ Topic | Title                                         | First year | Last year |
 4     | Semantic Parsing Tree Structure Analysis      | 2012.0000  | 2022.0000 | 31.0160 | 28.6130 | 295.0000 | 1031.0000        | -2.4030   | -1.2310     | -2.0552 | -0.5140 | 0.0165 | 0.0473
 18    | Contextual Token Level Target Phrase Analysis | 2012.0000  | 2022.0000 | 32.6203 | 31.6198 | 326.0000 | 1031.0000        | -1.0005   | -0.9058     | -1.2849 | -0.1001 | 0.0264 | 0.0660
 17    | Social Media Named Entity Recognition         | 2012.0000  | 2022.0000 | 28.3422 | 29.2919 | 302.0000 | 1031.0000        | 0.9497    | -0.1784     | -0.8519 | 0.4183  | 0.5322 | 0.5423
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/reference_trends.csv. No missing significance test is invented.
+
 
 ACTIVITY trends — largest absolute first/last prevalence changes
 Topic | Title                                         | First year | Last year | First % | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
@@ -611,7 +579,7 @@ Topic | Title                                         | First year | Last year |
 13    | Model Evaluation Metrics and Loss Functions   | 2012.0000  | 2022.0000 | 95.7219 | 94.4714 | 974.0000  | 1031.0000        | -1.2505   | -0.1962     | -0.4290 | 0.0366  | 0.0866 | 0.1237
 2     | Analyzing Methods in Research Papers          | 2012.0000  | 2022.0000 | 98.3957 | 99.5150 | 1026.0000 | 1031.0000        | 1.1193    | 0.1134      | -0.0174 | 0.4138  | 0.0602 | 0.0926
 8     | Large Scale Data Annotation Time Details      | 2012.0000  | 2022.0000 | 95.7219 | 95.8293 | 988.0000  | 1031.0000        | 0.1074    | 0.2581      | -0.0314 | 0.4622  | 0.0602 | 0.0926
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/activity_trends.csv. No missing significance test is invented.
+
 
 Input/reference topic overlap (descriptive; NOT extraction precision/recall)
 Reference provenance | Rows      | Scored    | Mean Jaccard
@@ -652,11 +620,6 @@ This acl snapshot contains NMF seeds 0,1,2,3,4; LDA seeds 0,1,2,3.
 Only the observed seeds contribute to reported summaries. Missing seeds/methods were not imputed.
 These artifacts support descriptive analysis only; no forecasting result is available.
 
-====================================================================================================
-MODEL: qwen | RUN: 216906.cm_20260910T211619
-Path: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619
-Original run status: NO completion marker; partial snapshot
-Configuration: {"activity_source": "input", "bootstrap": 1000, "chat_template": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/chat_template.jinja", "chunk_tokens": 6000, "context_length": 16384, "data_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data", "dataset": "all", "embedding_model": "/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2", "experiment": "all", "horizons": [1, 2, 3], "max_features": 20000, "max_tokens": 1024, "methods": ["nmf", "lda", "bertopic"], "min_cluster_size": 10, "min_train_origins": 3, "model": "qwen", "model_dir": "/lstr/sahara/datalab-ml/ibrahim/models/qwen3_8b", "neurips_year_column": null, "no_topic_labels": false, "num_samples": -1, "num_topics": 20, "out_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619", "ridge_alpha": 0.01, "seed": 42, "seeds": [0, 1, 2, 3, 4], "trend_window": 3, "warmup_years": 3}
 
 --------------------------------------------------------------------------------
 SCOPE: ACL
@@ -675,13 +638,6 @@ acl   | 2019.0 | 753    | 550            | 203
 acl   | 2020.0 | 861    | 624            | 237              
 acl   | 2021.0 | 1165   | 814            | 351              
 acl   | 2022.0 | 1031   | 740            | 291              
-Coverage source: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/coverage.csv; total analyzed papers in this scope: 5655.
-Reference status: {"available": 4005, "missing": 1650, "fallback_used": false}
-Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/llm_topic_labels_and_human_template.csv.
-Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_1/training_assignments.csv; labels: absent.
-Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_2/training_assignments.csv; labels: absent.
-Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_3/training_assignments.csv; labels: absent.
-Seed 4 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_4/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_4/training_assignments.csv; labels: absent.
 
 NMF — available seeds (no missing seed is counted as zero)
 Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability        
@@ -789,7 +745,6 @@ Topic | Title                                                                   
 7     | Comparative analysis of research papers across years                            | 2012.0000  | 2022.0000 | 98.9305  | 99.4180 | 1025.0000 | 1031.0000        | 0.4876    | 0.1345      | 0.0017  | 0.3134  | 0.0405 | 0.1158
 15    | Attention-based encoder for sequence representation                             | 2012.0000  | 2022.0000 | 100.0000 | 99.5150 | 1026.0000 | 1031.0000        | -0.4850   | -0.0289     | -0.0774 | 0.0085  | 0.2303 | 0.4187
 11    | Figure illustrates architecture with example overview                           | 2012.0000  | 2022.0000 | 92.5134  | 92.8225 | 957.0000  | 1031.0000        | 0.3091    | 0.0684      | -0.1095 | 0.4112  | 0.5423 | 0.6380
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/activity_trends.csv. No missing significance test is invented.
 
 Input/reference topic overlap (descriptive; NOT extraction precision/recall)
 Reference provenance | Rows      | Scored    | Mean Jaccard
@@ -819,9 +774,6 @@ Topic | Years | Spearman              | Mean absolute gap (fraction)
 17    | 11    | 0.29090909090909095   | 0.35567334976837395         
 18    | 11    | 0.7454545454545456    | 0.4567668276807169          
 19    | 11    | 0.5636363636363637    | 0.45021205194645036         
-Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/llm_topic_labels_and_human_template.csv.
-Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_1/training_assignments.csv; labels: absent.
-Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_2/training_assignments.csv; labels: absent.
 
 LDA — available seeds (no missing seed is counted as zero)
 Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability          
@@ -896,7 +848,6 @@ Topic | Title                                                               | Fi
 4     | Semantic and syntactic structure parsing with dependency trees      | 2012.0000  | 2022.0000 | 31.0160 | 28.6130 | 295.0000 | 1031.0000        | -2.4030   | -1.2310     | -2.0552 | -0.5140 | 0.0165 | 0.0473
 18    | Analysis of word and token level context in source and target texts | 2012.0000  | 2022.0000 | 32.6203 | 31.6198 | 326.0000 | 1031.0000        | -1.0005   | -0.9058     | -1.2849 | -0.1001 | 0.0264 | 0.0660
 17    | Identifying entity types in social media news mentions              | 2012.0000  | 2022.0000 | 28.3422 | 29.2919 | 302.0000 | 1031.0000        | 0.9497    | -0.1784     | -0.8519 | 0.4183  | 0.5322 | 0.5423
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/reference_trends.csv. No missing significance test is invented.
 
 ACTIVITY trends — largest absolute first/last prevalence changes
 Topic | Title                                                               | First year | Last year | First % | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
@@ -921,7 +872,6 @@ Topic | Title                                                               | Fi
 13    | Model loss and high score probability measure                       | 2012.0000  | 2022.0000 | 95.7219 | 94.4714 | 974.0000  | 1031.0000        | -1.2505   | -0.1962     | -0.4290 | 0.0366  | 0.0866 | 0.1237
 2     | Proposed method for paper analysis and study                        | 2012.0000  | 2022.0000 | 98.3957 | 99.5150 | 1026.0000 | 1031.0000        | 1.1193    | 0.1134      | -0.0174 | 0.4138  | 0.0602 | 0.0926
 8     | Large-scale data training with detailed annotation and code         | 2012.0000  | 2022.0000 | 95.7219 | 95.8293 | 988.0000  | 1031.0000        | 0.1074    | 0.2581      | -0.0314 | 0.4622  | 0.0602 | 0.0926
-Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/activity_trends.csv. No missing significance test is invented.
 
 Input/reference topic overlap (descriptive; NOT extraction precision/recall)
 Reference provenance | Rows      | Scored    | Mean Jaccard
