@@ -4,6 +4,9 @@ This independent package removes the extraction stage. It does not contain or im
 extraction.py, does not search backward for missing references, and does not generate
 or refine future-work references. The previous experiment_current folder is untouched.
 
+Here in the 'data' folder, toy datasets are available; the full dataset will be released 
+upon acceptance during the camera-ready version through Hugging Face. 
+
 ## Install at the requested path
 
 Upload exp_curr_without_extract.zip to the server, then:
