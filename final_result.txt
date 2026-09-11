@@ -1,0 +1,966 @@
+FUTURESCOPE — REPORT FROM EXISTING ARTIFACTS
+Generated (UTC): 2026-09-11T05:55:35.053794+00:00
+This is a recovered-results report, not a declaration that the original jobs completed.
+No extraction, LLM calls, topic fitting, embeddings, or forecasts were executed by this script.
+CSV is preferred; JSON is used when CSV is missing/empty/unreadable. They are never counted twice.
+NA means unavailable/undefined, never zero. Partially available seeds are reported with their actual count.
+Different runs/scopes/models are kept separate; results are NOT pooled across configurations.
+Gemma/Mistral/Qwen only title topics in the no-extraction pipeline: matching numeric results are not independent LLM experiments.
+Recovered NPMI uses binary word co-occurrence on saved training text units; diversity uses saved keywords.
+Silhouette is reported only when saved. No embedding model is loaded to reconstruct it.
+Missing human judgments, reference text, forecasts, confidence intervals or p-values are never invented.
+Trends are descriptive; exploratory p/q values do not establish causality or account for all temporal dependence.
+Input/reference overlap is not extraction accuracy. Supplied references have unverified provenance.
+Repeated seeds do not add papers to the dataset. ACL and NeurIPS papers also recur in the combined scope.
+Files written concurrently can produce incomplete snapshots. Stable readable tables are used with provenance.
+
+
+AVAILABLE RESULT INVENTORY
+Model   | Run                       | Scope | Completed marker | Methods/seeds                            | Forecast   
+--------+---------------------------+-------+------------------+------------------------------------------+------------
+gemma   | 216904.cm_20260910T211608 | acl   | 0.0000           | nmf seeds[0,1,2,3,4]; lda seeds[0,1,2,3] | unavailable
+mistral | 216905.cm_20260910T211614 | acl   | 0.0000           | nmf seeds[0,1,2,3,4]; lda seeds[0,1,2,3] | unavailable
+qwen    | 216906.cm_20260910T211619 | acl   | 0.0000           | nmf seeds[0,1,2,3,4]; lda seeds[0,1,2]   | unavailable
+
+====================================================================================================
+MODEL: gemma | RUN: 216904.cm_20260910T211608
+Path: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608
+Original run status: NO completion marker; partial snapshot
+Configuration: {"activity_source": "input", "bootstrap": 1000, "chat_template": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/chat_template.jinja", "chunk_tokens": 6000, "context_length": 16384, "data_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data", "dataset": "all", "embedding_model": "/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2", "experiment": "all", "horizons": [1, 2, 3], "max_features": 20000, "max_tokens": 1024, "methods": ["nmf", "lda", "bertopic"], "min_cluster_size": 10, "min_train_origins": 3, "model": "gemma", "model_dir": "/lstr/sahara/datalab-ml/ibrahim/models/gemma3_27b_it", "neurips_year_column": null, "no_topic_labels": false, "num_samples": -1, "num_topics": 20, "out_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608", "ridge_alpha": 0.01, "seed": 42, "seeds": [0, 1, 2, 3, 4], "trend_window": 3, "warmup_years": 3}
+
+--------------------------------------------------------------------------------
+SCOPE: ACL
+
+Dataset coverage
+Venue | Year   | Papers | With reference | Missing reference
+------+--------+--------+----------------+------------------
+acl   | 2012.0 | 187    | 106            | 81               
+acl   | 2013.0 | 328    | 240            | 88               
+acl   | 2014.0 | 286    | 205            | 81               
+acl   | 2015.0 | 33     | 19             | 14               
+acl   | 2016.0 | 328    | 227            | 101              
+acl   | 2017.0 | 302    | 220            | 82               
+acl   | 2018.0 | 381    | 260            | 121              
+acl   | 2019.0 | 753    | 550            | 203              
+acl   | 2020.0 | 861    | 624            | 237              
+acl   | 2021.0 | 1165   | 814            | 351              
+acl   | 2022.0 | 1031   | 740            | 291              
+Coverage source: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/coverage.csv; total analyzed papers in this scope: 5655.
+Reference status: {"available": 4005, "missing": 1650, "fallback_used": false}
+Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/llm_topic_labels_and_human_template.csv.
+Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_1/training_assignments.csv; labels: absent.
+Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_2/training_assignments.csv; labels: absent.
+Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_3/training_assignments.csv; labels: absent.
+Seed 4 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_4/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_4/training_assignments.csv; labels: absent.
+
+NMF — available seeds (no missing seed is counted as zero)
+Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability        
+-----+---------+--------+-----------+------------+--------------+-----------------------------+---------------------
+0    | 20.0000 | 0.1436 | 0.7750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 12 tables; titles 20
+1    | 20.0000 | 0.1377 | 0.7850    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+2    | 20.0000 | 0.1346 | 0.7750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+3    | 20.0000 | 0.1397 | 0.7700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+4    | 20.0000 | 0.1381 | 0.7700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+
+Available-seed summaries (sample SD; NA for fewer than two observations)
+Metric       | Observed seeds | Mean    | SD    
+-------------+----------------+---------+-------
+topics       | 5.0000         | 20.0000 | 0.0000
+npmi         | 5.0000         | 0.1387  | 0.0033
+diversity    | 5.0000         | 0.7750  | 0.0061
+silhouette   | 0.0000         | NA      | NA    
+outlier_rate | 5.0000         | 0.0163  | 0.0000
+
+Assignment stability (reconstructed only on identical training units; includes outlier label)
+Seed A | Seed B | Units        | ARI    | Source       
+-------+--------+--------------+--------+--------------
+0      | 1      | 1168951.0000 | 0.4183 | reconstructed
+0      | 2      | 1168951.0000 | 0.5818 | reconstructed
+0      | 3      | 1168951.0000 | 0.4670 | reconstructed
+0      | 4      | 1168951.0000 | 0.6089 | reconstructed
+1      | 2      | 1168951.0000 | 0.4338 | reconstructed
+1      | 3      | 1168951.0000 | 0.4663 | reconstructed
+1      | 4      | 1168951.0000 | 0.4937 | reconstructed
+2      | 3      | 1168951.0000 | 0.5188 | reconstructed
+2      | 4      | 1168951.0000 | 0.7429 | reconstructed
+3      | 4      | 1168951.0000 | 0.5329 | reconstructed
+
+Detailed tables use seed_0: lowest seed with descriptive tables, or lowest available seed if none have them. No best-seed selection.
+
+Topic dictionary (keyword fallback where no LLM title exists)
+Topic | Title / fallback                                                   | Keywords                                                                                           
+------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------
+0     | Natural language translation tasks and domain adaptation           | language; target; source; natural; translation; languages; english; tasks; domain; text            
+1     | Experimental results report and evaluation of state-of-the-art     | results; experimental; report; evaluation; reported; art; state; best; present; demonstrate        
+2     | BERT embeddings training and evaluation for feature use            | use; evaluation; make; following; features; embeddings; bert; train; loss; rate                    
+3     | Annotator training and agreement using text data.                  | data; training; pre; domain; labeled; using; examples; corpus; used; parallel                      
+4     | Research methodology and experimental details description          | section; experiments; used; method; datasets; details; proposed; appendix; described; approach     
+5     | Pretrained Neural Models: Training and Baseline Comparison         | models; trained; pre; neural; bert; based; baseline; large; pretrained; train                      
+6     | Dataset size impact on model performance/validation                | set; test; development; validation; size; 10; number; sets; training; dev                          
+7     | Temporal trends in cited research (2014-2021)                      | et; al; 2019; 2018; 2020; 2017; 2016; 2015; 2021; 2014                                             
+8     | Large-scale question answering dataset creation and evaluation     | dataset; question; contains; questions; new; evaluation; sentences; human; pairs; large            
+9     | Improving performance with novel methods; F1 score.                | performance; better; best; state; score; art; achieves; improve; methods; f1                       
+10    | BERT model training and performance comparison                     | model; trained; parameters; train; proposed; baseline; bert; base; pre; outperforms                
+11    | System architecture overview with illustrative examples/figures    | figure; example; shown; shows; architecture; illustrated; illustrates; examples; overview; consider
+12    | Sentence alignment and length analysis of text data                | sentence; sentences; level; words; given; source; pairs; document; target; length                  
+13    | Word embeddings and vector representations at different levels     | word; embeddings; words; embedding; vectors; vector; level; target; character; context             
+14    | Related work and future research directions                        | work; related; future; previous; knowledge; prior; research; learning; recent; paper               
+15    | Attention-based sequence encoding for text representation learning | based; attention; input; information; layer; sequence; features; text; encoder; representation     
+16    | Cross-lingual and cross-domain information status classification   | different; words; languages; types; tasks; methods; domains; datasets; number; similar             
+17    | Multi-task learning for text classification problems               | task; learning; multi; tasks; classification; specific; fine; problem; domain; text                
+18    | Data analysis and presentation of statistical results              | table; shows; shown; statistics; examples; datasets; scores; appendix; presents; listed            
+19    | Publicly available code on GitHub and the web                      | com; github; https; available; code; 1https; www; 2https; publicly; 3https                         
+
+REFERENCE trends — largest absolute first/last prevalence changes
+Topic | Title                                                              | First year | Last year | First % | Last %  | Last n   | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+--------------------------------------------------------------------+------------+-----------+---------+---------+----------+------------------+-----------+-------------+---------+---------+--------+-------
+5     | Pretrained Neural Models: Training and Baseline Comparison         | 2012.0000  | 2022.0000 | 20.8556 | 43.1620 | 445.0000 | 1031.0000        | 22.3064   | 2.2379      | 1.5331  | 2.7825  | 0.0000 | 0.0005
+8     | Large-scale question answering dataset creation and evaluation     | 2012.0000  | 2022.0000 | 20.3209 | 40.2522 | 415.0000 | 1031.0000        | 19.9313   | 1.2543      | 0.6039  | 1.9289  | 0.0003 | 0.0017
+7     | Temporal trends in cited research (2014-2021)                      | 2012.0000  | 2022.0000 | 28.8770 | 47.4297 | 489.0000 | 1031.0000        | 18.5527   | 1.2993      | 0.7508  | 1.9676  | 0.0001 | 0.0009
+16    | Cross-lingual and cross-domain information status classification   | 2012.0000  | 2022.0000 | 19.7861 | 37.0514 | 382.0000 | 1031.0000        | 17.2653   | 0.5358      | 0.0942  | 1.6547  | 0.0264 | 0.0754
+10    | BERT model training and performance comparison                     | 2012.0000  | 2022.0000 | 24.5989 | 41.2221 | 425.0000 | 1031.0000        | 16.6232   | 1.1588      | 0.8130  | 1.6561  | 0.0000 | 0.0005
+1     | Experimental results report and evaluation of state-of-the-art     | 2012.0000  | 2022.0000 | 28.8770 | 45.3928 | 468.0000 | 1031.0000        | 16.5158   | 0.8033      | 0.2485  | 1.6078  | 0.0099 | 0.0398
+0     | Natural language translation tasks and domain adaptation           | 2012.0000  | 2022.0000 | 37.4332 | 51.6974 | 533.0000 | 1031.0000        | 14.2642   | 0.6634      | -0.4069 | 1.4507  | 0.1646 | 0.2532
+4     | Research methodology and experimental details description          | 2012.0000  | 2022.0000 | 34.2246 | 48.3996 | 499.0000 | 1031.0000        | 14.1750   | 0.7186      | -0.4425 | 1.7923  | 0.2830 | 0.3773
+3     | Annotator training and agreement using text data.                  | 2012.0000  | 2022.0000 | 33.1551 | 47.2357 | 487.0000 | 1031.0000        | 14.0806   | 0.7330      | -0.0760 | 1.5475  | 0.0602 | 0.1203
+19    | Publicly available code on GitHub and the web                      | 2012.0000  | 2022.0000 | 11.7647 | 25.7032 | 265.0000 | 1031.0000        | 13.9385   | 0.8474      | 0.1994  | 1.6822  | 0.0165 | 0.0551
+17    | Multi-task learning for text classification problems               | 2012.0000  | 2022.0000 | 27.8075 | 40.7371 | 420.0000 | 1031.0000        | 12.9297   | 0.7945      | 0.0448  | 1.4584  | 0.0405 | 0.0901
+14    | Related work and future research directions                        | 2012.0000  | 2022.0000 | 51.3369 | 64.0155 | 660.0000 | 1031.0000        | 12.6786   | 0.6820      | -0.3884 | 1.5488  | 0.4349 | 0.5240
+9     | Improving performance with novel methods; F1 score.                | 2012.0000  | 2022.0000 | 40.1070 | 50.6305 | 522.0000 | 1031.0000        | 10.5235   | 0.7037      | -0.2242 | 1.3844  | 0.0866 | 0.1574
+15    | Attention-based sequence encoding for text representation learning | 2012.0000  | 2022.0000 | 46.5241 | 56.9350 | 587.0000 | 1031.0000        | 10.4110   | -0.0327     | -0.4692 | 1.3709  | 1.0000 | 1.0000
+2     | BERT embeddings training and evaluation for feature use            | 2012.0000  | 2022.0000 | 28.8770 | 38.4093 | 396.0000 | 1031.0000        | 9.5323    | 0.0000      | -0.5928 | 0.9532  | 1.0000 | 1.0000
+11    | System architecture overview with illustrative examples/figures    | 2012.0000  | 2022.0000 | 24.0642 | 32.4927 | 335.0000 | 1031.0000        | 8.4286    | 0.5934      | 0.0936  | 1.1254  | 0.0405 | 0.0901
+6     | Dataset size impact on model performance/validation                | 2012.0000  | 2022.0000 | 25.1337 | 33.0747 | 341.0000 | 1031.0000        | 7.9410    | 0.1120      | -0.4699 | 0.8858  | 0.6481 | 0.7201
+18    | Data analysis and presentation of statistical results              | 2012.0000  | 2022.0000 | 17.1123 | 24.9273 | 257.0000 | 1031.0000        | 7.8150    | 0.2921      | -0.2069 | 1.1396  | 0.1646 | 0.2532
+12    | Sentence alignment and length analysis of text data                | 2012.0000  | 2022.0000 | 25.6684 | 26.0912 | 269.0000 | 1031.0000        | 0.4227    | -0.2881     | -0.8130 | 0.2413  | 0.4454 | 0.5240
+13    | Word embeddings and vector representations at different levels     | 2012.0000  | 2022.0000 | 22.9947 | 23.1814 | 239.0000 | 1031.0000        | 0.1867    | -0.9485     | -2.1952 | 0.3422  | 0.2183 | 0.3119
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/reference_trends.csv. No missing significance test is invented.
+
+ACTIVITY trends — largest absolute first/last prevalence changes
+Topic | Title                                                              | First year | Last year | First %  | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+--------------------------------------------------------------------+------------+-----------+----------+---------+-----------+------------------+-----------+-------------+---------+---------+--------+-------
+5     | Pretrained Neural Models: Training and Baseline Comparison         | 2012.0000  | 2022.0000 | 67.9144  | 93.0165 | 959.0000  | 1031.0000        | 25.1021   | 2.7806      | 2.2621  | 3.2580  | 0.0000 | 0.0003
+10    | BERT model training and performance comparison                     | 2012.0000  | 2022.0000 | 78.0749  | 93.9864 | 969.0000  | 1031.0000        | 15.9116   | 2.0419      | 1.4050  | 2.9184  | 0.0008 | 0.0051
+19    | Publicly available code on GitHub and the web                      | 2012.0000  | 2022.0000 | 71.1230  | 86.7119 | 894.0000  | 1031.0000        | 15.5889   | 1.6694      | 1.2684  | 2.8310  | 0.0016 | 0.0080
+8     | Large-scale question answering dataset creation and evaluation     | 2012.0000  | 2022.0000 | 82.8877  | 93.0165 | 959.0000  | 1031.0000        | 10.1288   | 0.8130      | 0.0726  | 1.3883  | 0.0405 | 0.1158
+13    | Word embeddings and vector representations at different levels     | 2012.0000  | 2022.0000 | 85.0267  | 76.3337 | 787.0000  | 1031.0000        | -8.6931   | -0.8693     | -3.3547 | 0.9994  | 0.3587 | 0.5124
+17    | Multi-task learning for text classification problems               | 2012.0000  | 2022.0000 | 85.0267  | 93.4045 | 963.0000  | 1031.0000        | 8.3777    | 0.8140      | 0.5184  | 1.2537  | 0.0003 | 0.0033
+12    | Sentence alignment and length analysis of text data                | 2012.0000  | 2022.0000 | 87.1658  | 81.1833 | 837.0000  | 1031.0000        | -5.9825   | -0.7390     | -1.1031 | -0.0514 | 0.0405 | 0.1158
+14    | Related work and future research directions                        | 2012.0000  | 2022.0000 | 94.1176  | 97.2842 | 1003.0000 | 1031.0000        | 3.1665    | 0.2430      | -0.1618 | 0.5563  | 0.4454 | 0.5938
+1     | Experimental results report and evaluation of state-of-the-art     | 2012.0000  | 2022.0000 | 91.4439  | 94.5684 | 975.0000  | 1031.0000        | 3.1245    | 0.1839      | -0.1029 | 0.6134  | 0.1646 | 0.3657
+2     | BERT embeddings training and evaluation for feature use            | 2012.0000  | 2022.0000 | 96.2567  | 94.4714 | 974.0000  | 1031.0000        | -1.7853   | -0.1986     | -0.4932 | 0.1427  | 0.1210 | 0.3024
+6     | Dataset size impact on model performance/validation                | 2012.0000  | 2022.0000 | 96.2567  | 94.4714 | 974.0000  | 1031.0000        | -1.7853   | -0.3161     | -0.5499 | 0.2499  | 0.2830 | 0.4716
+16    | Cross-lingual and cross-domain information status classification   | 2012.0000  | 2022.0000 | 90.9091  | 92.6285 | 955.0000  | 1031.0000        | 1.7194    | 0.1719      | -0.3238 | 0.9547  | 0.5423 | 0.6380
+0     | Natural language translation tasks and domain adaptation           | 2012.0000  | 2022.0000 | 98.9305  | 97.2842 | 1003.0000 | 1031.0000        | -1.6463   | 0.0449      | -0.1978 | 0.1906  | 0.7612 | 0.8457
+18    | Data analysis and presentation of statistical results              | 2012.0000  | 2022.0000 | 82.8877  | 83.8991 | 865.0000  | 1031.0000        | 1.0114    | 0.0742      | -0.5826 | 1.1507  | 0.8793 | 0.9255
+4     | Research methodology and experimental details description          | 2012.0000  | 2022.0000 | 97.3262  | 98.1571 | 1012.0000 | 1031.0000        | 0.8309    | 0.0000      | -0.2254 | 0.5247  | 1.0000 | 1.0000
+3     | Annotator training and agreement using text data.                  | 2012.0000  | 2022.0000 | 94.1176  | 94.8594 | 978.0000  | 1031.0000        | 0.7417    | 0.1162      | -0.1166 | 0.3605  | 0.2183 | 0.4187
+9     | Improving performance with novel methods; F1 score.                | 2012.0000  | 2022.0000 | 97.3262  | 98.0601 | 1011.0000 | 1031.0000        | 0.7339    | 0.0734      | -0.1201 | 0.3777  | 0.3587 | 0.5124
+7     | Temporal trends in cited research (2014-2021)                      | 2012.0000  | 2022.0000 | 98.9305  | 99.4180 | 1025.0000 | 1031.0000        | 0.4876    | 0.1345      | 0.0017  | 0.3134  | 0.0405 | 0.1158
+15    | Attention-based sequence encoding for text representation learning | 2012.0000  | 2022.0000 | 100.0000 | 99.5150 | 1026.0000 | 1031.0000        | -0.4850   | -0.0289     | -0.0774 | 0.0085  | 0.2303 | 0.4187
+11    | System architecture overview with illustrative examples/figures    | 2012.0000  | 2022.0000 | 92.5134  | 92.8225 | 957.0000  | 1031.0000        | 0.3091    | 0.0684      | -0.1095 | 0.4112  | 0.5423 | 0.6380
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/nmf/seed_0/activity_trends.csv. No missing significance test is invented.
+
+Input/reference topic overlap (descriptive; NOT extraction precision/recall)
+Reference provenance | Rows      | Scored    | Mean Jaccard
+---------------------+-----------+-----------+-------------
+acl_supplied         | 4005.0000 | 4005.0000 | 0.5191      
+
+Input/reference temporal agreement
+Topic | Years | Spearman              | Mean absolute gap (fraction)
+------+-------+-----------------------+-----------------------------
+0     | 11    | 0.6272727272727273    | 0.2925009821595321          
+1     | 11    | 0.5181818181818182    | 0.33294873814634984         
+2     | 11    | 0.18181818181818182   | 0.4140011376771808          
+3     | 11    | -0.3727272727272728   | 0.35186999294434657         
+4     | 11    | -0.009090909090909092 | 0.3598489421443977          
+5     | 11    | 0.8000000000000002    | 0.3347597878308357          
+6     | 11    | 0.3727272727272728    | 0.4916683815810726          
+7     | 11    | 0.2687934080711411    | 0.4240679844077851          
+8     | 11    | 0.7636363636363637    | 0.4361063953942184          
+9     | 11    | 0.22727272727272727   | 0.32074472310078544         
+10    | 11    | 0.7636363636363637    | 0.33457867809938363         
+11    | 11    | -0.018181818181818184 | 0.5072942183072714          
+12    | 11    | 0.9090909090909091    | 0.43574281227919587         
+13    | 11    | 0.9363636363636365    | 0.4242322382686556          
+14    | 11    | 0.23636363636363636   | 0.05201924155975797         
+15    | 11    | 0.3221930381127963    | 0.2030175796981082          
+16    | 11    | 0.20909090909090913   | 0.4129244119382138          
+17    | 11    | 0.29090909090909095   | 0.35567334976837395         
+18    | 11    | 0.7454545454545456    | 0.4567668276807169          
+19    | 11    | 0.5636363636363637    | 0.45021205194645036         
+Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/llm_topic_labels_and_human_template.csv.
+Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_1/training_assignments.csv; labels: absent.
+Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_2/training_assignments.csv; labels: absent.
+Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_3/training_assignments.csv; labels: absent.
+
+LDA — available seeds (no missing seed is counted as zero)
+Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability          
+-----+---------+--------+-----------+------------+--------------+-----------------------------+-----------------------
+0    | 20.0000 | 0.1264 | 0.9200    | NA         | 0.0163       | npmi,diversity,outlier_rate | 12 tables; titles 20  
+1    | 20.0000 | 0.1280 | 0.8750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+2    | 20.0000 | 0.1301 | 0.8700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+3    | 20.0000 | 0.1274 | 0.8950    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+4    | NA      | NA     | NA        | NA         | NA           | NA                          | No usable topics table
+
+Available-seed summaries (sample SD; NA for fewer than two observations)
+Metric       | Observed seeds | Mean    | SD    
+-------------+----------------+---------+-------
+topics       | 4.0000         | 20.0000 | 0.0000
+npmi         | 4.0000         | 0.1280  | 0.0016
+diversity    | 4.0000         | 0.8900  | 0.0227
+silhouette   | 0.0000         | NA      | NA    
+outlier_rate | 4.0000         | 0.0163  | 0.0000
+
+Assignment stability (reconstructed only on identical training units; includes outlier label)
+Seed A | Seed B | Units        | ARI    | Source       
+-------+--------+--------------+--------+--------------
+0      | 1      | 1168951.0000 | 0.2274 | reconstructed
+0      | 2      | 1168951.0000 | 0.2161 | reconstructed
+0      | 3      | 1168951.0000 | 0.2410 | reconstructed
+1      | 2      | 1168951.0000 | 0.2315 | reconstructed
+1      | 3      | 1168951.0000 | 0.2633 | reconstructed
+2      | 3      | 1168951.0000 | 0.2170 | reconstructed
+
+Detailed tables use seed_0: lowest seed with descriptive tables, or lowest available seed if none have them. No best-seed selection.
+
+Topic dictionary (keyword fallback where no LLM title exists)
+Topic | Title / fallback                                               | Keywords                                                                                             
+------+----------------------------------------------------------------+------------------------------------------------------------------------------------------------------
+0     | Descending list computation and pruning algorithms             | figure; example; graph; shown; shows; node; table; nodes; right; left                                
+1     | Citation analysis across multiple years (2014-2021)            | al; et; 2019; 2018; 2020; 2017; 2016; 2015; 2014; 2021                                               
+2     | Research methods and analysis of prior studies                 | work; section; paper; methods; approach; method; proposed; analysis; study; previous                 
+3     | Machine translation evaluation across datasets and domains     | domain; evaluation; translation; english; experiments; evaluate; data; different; results; datasets  
+4     | Syntactic and Semantic Parsing of Linguistic Structure         | semantic; structure; syntactic; dependency; parsing; tree; rules; discourse; parser; form            
+5     | Dataset size impact on model training performance              | set; number; test; dataset; training; 10; sentences; size; examples; pairs                           
+6     | Log data analysis with vectors and matrices                    | log; com; matrix; xi; vector; github; th; denotes; denote; let                                       
+7     | Neural network representations and attention mechanisms        | attention; model; layer; embeddings; encoder; network; representations; input; neural; representation
+8     | Large-scale data annotation for machine learning training      | data; training; large; time; annotation; appendix; labeled; scale; code; details                     
+9     | Combinatory Parsing: Efficiency and Applications (2008-2012)   | topic; features; pos; used; 2010; 2011; 2008; using; 2009; 2012                                      
+10    | Model performance comparison and accuracy results analysis     | performance; results; model; table; better; models; accuracy; baseline; best; state                  
+11    | Similarity search algorithms for data distributions and values | similarity; space; algorithm; distribution; search; value; values; decoding; distance; model         
+12    | Relation classification and knowledge extraction from text     | relation; label; knowledge; task; relations; event; classification; labels; sentiment; extraction    
+13    | Model score/loss evaluation and performance measurement        | score; loss; scores; high; model; function; higher; probability; recall; measure                     
+14    | Question answering and text generation from documents          | question; generation; answer; questions; document; dialogue; text; response; query; summarization    
+15    | Natural Language Processing (NLP) Tasks and Applications       | language; text; languages; tasks; natural; nlp; cross; image; speech; visual                         
+16    | Modeling bias and errors in human-AI tasks                     | model; models; make; bias; features; specific; human; errors; task; information                      
+17    | Named entity mention information status in news/social data    | entity; news; entities; types; user; mentions; users; social; named; mention                         
+18    | Merging descending lists of real numbers                       | word; words; sentence; target; source; level; token; tokens; context; phrase                         
+19    | BERT model training and fine-tuning for tasks                  | model; learning; trained; models; training; pre; bert; task; fine; parameters                        
+
+REFERENCE trends — largest absolute first/last prevalence changes
+Topic | Title                                                          | First year | Last year | First % | Last %  | Last n   | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+----------------------------------------------------------------+------------+-----------+---------+---------+----------+------------------+-----------+-------------+---------+---------+--------+-------
+1     | Citation analysis across multiple years (2014-2021)            | 2012.0000  | 2022.0000 | 18.7166 | 45.5868 | 470.0000 | 1031.0000        | 26.8702   | 2.1519      | 1.3478  | 3.2094  | 0.0000 | 0.0001
+19    | BERT model training and fine-tuning for tasks                  | 2012.0000  | 2022.0000 | 21.9251 | 43.5500 | 449.0000 | 1031.0000        | 21.6248   | 2.6370      | 1.9632  | 3.2837  | 0.0000 | 0.0003
+14    | Question answering and text generation from documents          | 2012.0000  | 2022.0000 | 10.6952 | 30.9408 | 319.0000 | 1031.0000        | 20.2456   | 1.9543      | 1.3715  | 2.1465  | 0.0000 | 0.0001
+7     | Neural network representations and attention mechanisms        | 2012.0000  | 2022.0000 | 11.2299 | 29.9709 | 309.0000 | 1031.0000        | 18.7410   | 2.3860      | 0.1383  | 4.4116  | 0.0405 | 0.0901
+9     | Combinatory Parsing: Efficiency and Applications (2008-2012)   | 2012.0000  | 2022.0000 | 34.2246 | 16.5858 | 171.0000 | 1031.0000        | -17.6388  | -2.7994     | -3.6737 | -1.7639 | 0.0008 | 0.0038
+8     | Large-scale data annotation for machine learning training      | 2012.0000  | 2022.0000 | 30.4813 | 46.8477 | 483.0000 | 1031.0000        | 16.3664   | 0.4936      | -0.1088 | 1.4946  | 0.0609 | 0.1218
+2     | Research methods and analysis of prior studies                 | 2012.0000  | 2022.0000 | 52.9412 | 68.1862 | 703.0000 | 1031.0000        | 15.2451   | 0.3653      | -0.6012 | 1.6752  | 0.3587 | 0.4220
+16    | Modeling bias and errors in human-AI tasks                     | 2012.0000  | 2022.0000 | 35.2941 | 50.4365 | 520.0000 | 1031.0000        | 15.1424   | 0.9287      | 0.2939  | 1.5791  | 0.0165 | 0.0473
+10    | Model performance comparison and accuracy results analysis     | 2012.0000  | 2022.0000 | 37.9679 | 52.4733 | 541.0000 | 1031.0000        | 14.5054   | 0.5609      | 0.1514  | 1.3335  | 0.0099 | 0.0398
+6     | Log data analysis with vectors and matrices                    | 2012.0000  | 2022.0000 | 16.0428 | 27.6431 | 285.0000 | 1031.0000        | 11.6003   | 0.6280      | -0.4807 | 1.6921  | 0.2183 | 0.3359
+12    | Relation classification and knowledge extraction from text     | 2012.0000  | 2022.0000 | 21.9251 | 33.4627 | 345.0000 | 1031.0000        | 11.5375   | 0.4537      | -0.1004 | 1.2453  | 0.2183 | 0.3359
+15    | Natural Language Processing (NLP) Tasks and Applications       | 2012.0000  | 2022.0000 | 29.4118 | 40.8341 | 421.0000 | 1031.0000        | 11.4224   | 0.1798      | -0.6190 | 0.9388  | 0.4454 | 0.4949
+5     | Dataset size impact on model training performance              | 2012.0000  | 2022.0000 | 27.8075 | 36.6634 | 378.0000 | 1031.0000        | 8.8559    | 0.5251      | -0.4371 | 1.6260  | 0.3587 | 0.4220
+13    | Model score/loss evaluation and performance measurement        | 2012.0000  | 2022.0000 | 26.7380 | 34.1416 | 352.0000 | 1031.0000        | 7.4036    | 0.3949      | -0.2091 | 1.1185  | 0.2830 | 0.4042
+3     | Machine translation evaluation across datasets and domains     | 2012.0000  | 2022.0000 | 29.4118 | 36.0815 | 372.0000 | 1031.0000        | 6.6697    | 0.2033      | -0.1016 | 0.8064  | 0.1646 | 0.2992
+11    | Similarity search algorithms for data distributions and values | 2012.0000  | 2022.0000 | 28.8770 | 34.8206 | 359.0000 | 1031.0000        | 5.9436    | -0.4769     | -1.0487 | 0.5551  | 0.5423 | 0.5423
+0     | Descending list computation and pruning algorithms             | 2012.0000  | 2022.0000 | 19.7861 | 25.6062 | 264.0000 | 1031.0000        | 5.8201    | 0.0628      | -0.3570 | 0.6812  | 0.3587 | 0.4220
+4     | Syntactic and Semantic Parsing of Linguistic Structure         | 2012.0000  | 2022.0000 | 31.0160 | 28.6130 | 295.0000 | 1031.0000        | -2.4030   | -1.2310     | -2.0552 | -0.5140 | 0.0165 | 0.0473
+18    | Merging descending lists of real numbers                       | 2012.0000  | 2022.0000 | 32.6203 | 31.6198 | 326.0000 | 1031.0000        | -1.0005   | -0.9058     | -1.2849 | -0.1001 | 0.0264 | 0.0660
+17    | Named entity mention information status in news/social data    | 2012.0000  | 2022.0000 | 28.3422 | 29.2919 | 302.0000 | 1031.0000        | 0.9497    | -0.1784     | -0.8519 | 0.4183  | 0.5322 | 0.5423
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/reference_trends.csv. No missing significance test is invented.
+
+ACTIVITY trends — largest absolute first/last prevalence changes
+Topic | Title                                                          | First year | Last year | First % | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+----------------------------------------------------------------+------------+-----------+---------+---------+-----------+------------------+-----------+-------------+---------+---------+--------+-------
+9     | Combinatory Parsing: Efficiency and Applications (2008-2012)   | 2012.0000  | 2022.0000 | 99.4652 | 62.7546 | 647.0000  | 1031.0000        | -36.7106  | -3.9672     | -5.4400 | -2.2109 | 0.0001 | 0.0013
+7     | Neural network representations and attention mechanisms        | 2012.0000  | 2022.0000 | 59.3583 | 87.9728 | 907.0000  | 1031.0000        | 28.6146   | 3.3236      | 0.8918  | 5.5050  | 0.0264 | 0.0528
+19    | BERT model training and fine-tuning for tasks                  | 2012.0000  | 2022.0000 | 67.3797 | 93.8894 | 968.0000  | 1031.0000        | 26.5097   | 2.9016      | 2.2106  | 3.7307  | 0.0001 | 0.0013
+14    | Question answering and text generation from documents          | 2012.0000  | 2022.0000 | 51.8717 | 74.9758 | 773.0000  | 1031.0000        | 23.1041   | 2.6008      | 1.5603  | 3.4413  | 0.0003 | 0.0022
+4     | Syntactic and Semantic Parsing of Linguistic Structure         | 2012.0000  | 2022.0000 | 88.2353 | 73.6178 | 759.0000  | 1031.0000        | -14.6174  | -1.7868     | -2.7241 | -0.7386 | 0.0099 | 0.0284
+1     | Citation analysis across multiple years (2014-2021)            | 2012.0000  | 2022.0000 | 91.4439 | 99.4180 | 1025.0000 | 1031.0000        | 7.9742    | 0.8747      | 0.2317  | 1.4422  | 0.0016 | 0.0080
+11    | Similarity search algorithms for data distributions and values | 2012.0000  | 2022.0000 | 95.1872 | 88.8458 | 916.0000  | 1031.0000        | -6.3414   | -0.6368     | -1.0460 | -0.0163 | 0.0264 | 0.0528
+18    | Merging descending lists of real numbers                       | 2012.0000  | 2022.0000 | 95.7219 | 89.9127 | 927.0000  | 1031.0000        | -5.8092   | -0.7931     | -1.2109 | -0.2056 | 0.0165 | 0.0414
+15    | Natural Language Processing (NLP) Tasks and Applications       | 2012.0000  | 2022.0000 | 85.0267 | 89.9127 | 927.0000  | 1031.0000        | 4.8860    | 0.1079      | -0.7108 | 0.6278  | 0.5423 | 0.5423
+0     | Descending list computation and pruning algorithms             | 2012.0000  | 2022.0000 | 93.5829 | 88.7488 | 915.0000  | 1031.0000        | -4.8341   | -0.4426     | -0.7225 | -0.0000 | 0.0423 | 0.0770
+17    | Named entity mention information status in news/social data    | 2012.0000  | 2022.0000 | 83.9572 | 79.7284 | 822.0000  | 1031.0000        | -4.2288   | -0.6298     | -1.0335 | -0.3338 | 0.0057 | 0.0190
+12    | Relation classification and knowledge extraction from text     | 2012.0000  | 2022.0000 | 80.7487 | 84.3841 | 870.0000  | 1031.0000        | 3.6354    | 0.2588      | -0.2760 | 0.8378  | 0.2183 | 0.2569
+6     | Log data analysis with vectors and matrices                    | 2012.0000  | 2022.0000 | 91.9786 | 95.2473 | 982.0000  | 1031.0000        | 3.2687    | 0.3285      | 0.1618  | 0.8690  | 0.0049 | 0.0190
+10    | Model performance comparison and accuracy results analysis     | 2012.0000  | 2022.0000 | 94.6524 | 97.6722 | 1007.0000 | 1031.0000        | 3.0198    | 0.1398      | -0.1022 | 0.5565  | 0.2183 | 0.2569
+5     | Dataset size impact on model training performance              | 2012.0000  | 2022.0000 | 98.3957 | 96.3143 | 993.0000  | 1031.0000        | -2.0815   | -0.2891     | -0.6245 | 0.2033  | 0.1210 | 0.1613
+16    | Modeling bias and errors in human-AI tasks                     | 2012.0000  | 2022.0000 | 97.8610 | 96.0233 | 990.0000  | 1031.0000        | -1.8377   | 0.1980      | -0.1838 | 0.4800  | 0.3587 | 0.3776
+3     | Machine translation evaluation across datasets and domains     | 2012.0000  | 2022.0000 | 86.6310 | 88.1668 | 909.0000  | 1031.0000        | 1.5358    | 0.1386      | -0.2644 | 0.7206  | 0.2830 | 0.3144
+13    | Model score/loss evaluation and performance measurement        | 2012.0000  | 2022.0000 | 95.7219 | 94.4714 | 974.0000  | 1031.0000        | -1.2505   | -0.1962     | -0.4290 | 0.0366  | 0.0866 | 0.1237
+2     | Research methods and analysis of prior studies                 | 2012.0000  | 2022.0000 | 98.3957 | 99.5150 | 1026.0000 | 1031.0000        | 1.1193    | 0.1134      | -0.0174 | 0.4138  | 0.0602 | 0.0926
+8     | Large-scale data annotation for machine learning training      | 2012.0000  | 2022.0000 | 95.7219 | 95.8293 | 988.0000  | 1031.0000        | 0.1074    | 0.2581      | -0.0314 | 0.4622  | 0.0602 | 0.0926
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/gemma/all/216904.cm_20260910T211608/acl/topics/lda/seed_0/activity_trends.csv. No missing significance test is invented.
+
+Input/reference topic overlap (descriptive; NOT extraction precision/recall)
+Reference provenance | Rows      | Scored    | Mean Jaccard
+---------------------+-----------+-----------+-------------
+acl_supplied         | 4005.0000 | 4005.0000 | 0.4924      
+
+Input/reference temporal agreement
+Topic | Years | Spearman             | Mean absolute gap (fraction)
+------+-------+----------------------+-----------------------------
+0     | 11    | 0.21818181818181823  | 0.5288940828350547          
+1     | 11    | 0.8454545454545455   | 0.44461625525847487         
+2     | 11    | 0.5727272727272729   | 0.03951247056105467         
+3     | 11    | -0.19178282129043372 | 0.37519130061768635         
+4     | 11    | 0.9181818181818183   | 0.35840260633693233         
+5     | 11    | 0.21412356236175645  | 0.4746705059312543          
+6     | 11    | 0.5636363636363637   | 0.5619502608884089          
+7     | 11    | 0.9181818181818183   | 0.3790741193147315          
+8     | 11    | -0.3234632537805257  | 0.3275174229531905          
+9     | 11    | 0.9272727272727275   | 0.41632598553230443         
+10    | 11    | 0.23636363636363636  | 0.25272850137416775         
+11    | 11    | 0.8000000000000002   | 0.4213668312690997          
+12    | 11    | 0.4965844318602437   | 0.38098322628709236         
+13    | 11    | -0.13211879379767952 | 0.46667653648416585         
+14    | 11    | 0.8636363636363636   | 0.3080161668956808          
+15    | 11    | 0.5727272727272729   | 0.35053775928019576         
+16    | 11    | 0.7181818181818183   | 0.2975204408255532          
+17    | 11    | 0.7545454545454545   | 0.37985234170274773         
+18    | 11    | 0.7272727272727273   | 0.41386205767496753         
+19    | 11    | 0.881818181818182    | 0.3823169194488893          
+BERTOPIC: no saved method directory; unavailable, not a failed score.
+
+FORECASTING
+Unavailable: no usable saved records.
+No completed forecast summary/fold results found. Do not claim predictive improvement from these artifacts.
+
+PAPER/APPENDIX STATUS NOTE:
+This acl snapshot contains NMF seeds 0,1,2,3,4; LDA seeds 0,1,2,3.
+Only the observed seeds contribute to reported summaries. Missing seeds/methods were not imputed.
+These artifacts support descriptive analysis only; no forecasting result is available.
+
+====================================================================================================
+MODEL: mistral | RUN: 216905.cm_20260910T211614
+Path: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614
+Original run status: NO completion marker; partial snapshot
+Configuration: {"activity_source": "input", "bootstrap": 1000, "chat_template": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/chat_template.jinja", "chunk_tokens": 6000, "context_length": 16384, "data_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data", "dataset": "all", "embedding_model": "/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2", "experiment": "all", "horizons": [1, 2, 3], "max_features": 20000, "max_tokens": 1024, "methods": ["nmf", "lda", "bertopic"], "min_cluster_size": 10, "min_train_origins": 3, "model": "mistral", "model_dir": "/lstr/sahara/datalab-ml/ibrahim/models/mistral_small_3_1_24b_instruct", "neurips_year_column": null, "no_topic_labels": false, "num_samples": -1, "num_topics": 20, "out_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614", "ridge_alpha": 0.01, "seed": 42, "seeds": [0, 1, 2, 3, 4], "trend_window": 3, "warmup_years": 3}
+
+--------------------------------------------------------------------------------
+SCOPE: ACL
+
+Dataset coverage
+Venue | Year   | Papers | With reference | Missing reference
+------+--------+--------+----------------+------------------
+acl   | 2012.0 | 187    | 106            | 81               
+acl   | 2013.0 | 328    | 240            | 88               
+acl   | 2014.0 | 286    | 205            | 81               
+acl   | 2015.0 | 33     | 19             | 14               
+acl   | 2016.0 | 328    | 227            | 101              
+acl   | 2017.0 | 302    | 220            | 82               
+acl   | 2018.0 | 381    | 260            | 121              
+acl   | 2019.0 | 753    | 550            | 203              
+acl   | 2020.0 | 861    | 624            | 237              
+acl   | 2021.0 | 1165   | 814            | 351              
+acl   | 2022.0 | 1031   | 740            | 291              
+Coverage source: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/coverage.csv; total analyzed papers in this scope: 5655.
+Reference status: {"available": 4005, "missing": 1650, "fallback_used": false}
+Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/llm_topic_labels_and_human_template.csv.
+Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_1/training_assignments.csv; labels: absent.
+Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_2/training_assignments.csv; labels: absent.
+Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_3/training_assignments.csv; labels: absent.
+Seed 4 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_4/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_4/training_assignments.csv; labels: absent.
+
+NMF — available seeds (no missing seed is counted as zero)
+Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability        
+-----+---------+--------+-----------+------------+--------------+-----------------------------+---------------------
+0    | 20.0000 | 0.1436 | 0.7750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 12 tables; titles 20
+1    | 20.0000 | 0.1377 | 0.7850    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+2    | 20.0000 | 0.1346 | 0.7750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+3    | 20.0000 | 0.1397 | 0.7700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+4    | 20.0000 | 0.1381 | 0.7700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+
+Available-seed summaries (sample SD; NA for fewer than two observations)
+Metric       | Observed seeds | Mean    | SD    
+-------------+----------------+---------+-------
+topics       | 5.0000         | 20.0000 | 0.0000
+npmi         | 5.0000         | 0.1387  | 0.0033
+diversity    | 5.0000         | 0.7750  | 0.0061
+silhouette   | 0.0000         | NA      | NA    
+outlier_rate | 5.0000         | 0.0163  | 0.0000
+
+Assignment stability (reconstructed only on identical training units; includes outlier label)
+Seed A | Seed B | Units        | ARI    | Source       
+-------+--------+--------------+--------+--------------
+0      | 1      | 1168951.0000 | 0.4183 | reconstructed
+0      | 2      | 1168951.0000 | 0.5818 | reconstructed
+0      | 3      | 1168951.0000 | 0.4670 | reconstructed
+0      | 4      | 1168951.0000 | 0.6089 | reconstructed
+1      | 2      | 1168951.0000 | 0.4338 | reconstructed
+1      | 3      | 1168951.0000 | 0.4663 | reconstructed
+1      | 4      | 1168951.0000 | 0.4937 | reconstructed
+2      | 3      | 1168951.0000 | 0.5188 | reconstructed
+2      | 4      | 1168951.0000 | 0.7429 | reconstructed
+3      | 4      | 1168951.0000 | 0.5329 | reconstructed
+
+Detailed tables use seed_0: lowest seed with descriptive tables, or lowest available seed if none have them. No best-seed selection.
+
+Topic dictionary (keyword fallback where no LLM title exists)
+Topic | Title / fallback                                 | Keywords                                                                                           
+------+--------------------------------------------------+----------------------------------------------------------------------------------------------------
+0     | Natural Language Translation Task Analysis       | language; target; source; natural; translation; languages; english; tasks; domain; text            
+1     | Evaluating Experimental Art State Results        | results; experimental; report; evaluation; reported; art; state; best; present; demonstrate        
+2     | BERT Embeddings for Text Evaluation              | use; evaluation; make; following; features; embeddings; bert; train; loss; rate                    
+3     | Pre-labeled corpus for training annotators       | data; training; pre; domain; labeled; using; examples; corpus; used; parallel                      
+4     | Method and Datasets Used in Experiments          | section; experiments; used; method; datasets; details; proposed; appendix; described; approach     
+5     | Pretrained Models vs Baseline Train              | models; trained; pre; neural; bert; based; baseline; large; pretrained; train                      
+6     | Data Set Sizes for Training, Dev, Test           | set; test; development; validation; size; 10; number; sets; training; dev                          
+7     | Text as Data Misinterpretation 2014-2021         | et; al; 2019; 2018; 2020; 2017; 2016; 2015; 2021; 2014                                             
+8     | Evaluating questions in large sentence pairs     | dataset; question; contains; questions; new; evaluation; sentences; human; pairs; large            
+9     | Improving F1 Score with State-of-the-Art Methods | performance; better; best; state; score; art; achieves; improve; methods; f1                       
+10    | BERT Baseline Model Training Comparison          | model; trained; parameters; train; proposed; baseline; bert; base; pre; outperforms                
+11    | Text as Data in Figures and Examples             | figure; example; shown; shows; architecture; illustrated; illustrates; examples; overview; consider
+12    | Sentence Length in Document Pairs                | sentence; sentences; level; words; given; source; pairs; document; target; length                  
+13    | Contextual word embedding vectors                | word; embeddings; words; embedding; vectors; vector; level; target; character; context             
+14    | Prior Research on Text as Data                   | work; related; future; previous; knowledge; prior; research; learning; recent; paper               
+15    | Text Encoder for Sequence Representation         | based; attention; input; information; layer; sequence; features; text; encoder; representation     
+16    | Comparing tasks across languages and domains     | different; words; languages; types; tasks; methods; domains; datasets; number; similar             
+17    | Multi-Task Text Classification Problem           | task; learning; multi; tasks; classification; specific; fine; problem; domain; text                
+18    | Data Presentation in Research Papers             | table; shows; shown; statistics; examples; datasets; scores; appendix; presents; listed            
+19    | Publicly Available Text Data on GitHub           | com; github; https; available; code; 1https; www; 2https; publicly; 3https                         
+
+REFERENCE trends — largest absolute first/last prevalence changes
+Topic | Title                                            | First year | Last year | First % | Last %  | Last n   | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+--------------------------------------------------+------------+-----------+---------+---------+----------+------------------+-----------+-------------+---------+---------+--------+-------
+5     | Pretrained Models vs Baseline Train              | 2012.0000  | 2022.0000 | 20.8556 | 43.1620 | 445.0000 | 1031.0000        | 22.3064   | 2.2379      | 1.5331  | 2.7825  | 0.0000 | 0.0005
+8     | Evaluating questions in large sentence pairs     | 2012.0000  | 2022.0000 | 20.3209 | 40.2522 | 415.0000 | 1031.0000        | 19.9313   | 1.2543      | 0.6039  | 1.9289  | 0.0003 | 0.0017
+7     | Text as Data Misinterpretation 2014-2021         | 2012.0000  | 2022.0000 | 28.8770 | 47.4297 | 489.0000 | 1031.0000        | 18.5527   | 1.2993      | 0.7508  | 1.9676  | 0.0001 | 0.0009
+16    | Comparing tasks across languages and domains     | 2012.0000  | 2022.0000 | 19.7861 | 37.0514 | 382.0000 | 1031.0000        | 17.2653   | 0.5358      | 0.0942  | 1.6547  | 0.0264 | 0.0754
+10    | BERT Baseline Model Training Comparison          | 2012.0000  | 2022.0000 | 24.5989 | 41.2221 | 425.0000 | 1031.0000        | 16.6232   | 1.1588      | 0.8130  | 1.6561  | 0.0000 | 0.0005
+1     | Evaluating Experimental Art State Results        | 2012.0000  | 2022.0000 | 28.8770 | 45.3928 | 468.0000 | 1031.0000        | 16.5158   | 0.8033      | 0.2485  | 1.6078  | 0.0099 | 0.0398
+0     | Natural Language Translation Task Analysis       | 2012.0000  | 2022.0000 | 37.4332 | 51.6974 | 533.0000 | 1031.0000        | 14.2642   | 0.6634      | -0.4069 | 1.4507  | 0.1646 | 0.2532
+4     | Method and Datasets Used in Experiments          | 2012.0000  | 2022.0000 | 34.2246 | 48.3996 | 499.0000 | 1031.0000        | 14.1750   | 0.7186      | -0.4425 | 1.7923  | 0.2830 | 0.3773
+3     | Pre-labeled corpus for training annotators       | 2012.0000  | 2022.0000 | 33.1551 | 47.2357 | 487.0000 | 1031.0000        | 14.0806   | 0.7330      | -0.0760 | 1.5475  | 0.0602 | 0.1203
+19    | Publicly Available Text Data on GitHub           | 2012.0000  | 2022.0000 | 11.7647 | 25.7032 | 265.0000 | 1031.0000        | 13.9385   | 0.8474      | 0.1994  | 1.6822  | 0.0165 | 0.0551
+17    | Multi-Task Text Classification Problem           | 2012.0000  | 2022.0000 | 27.8075 | 40.7371 | 420.0000 | 1031.0000        | 12.9297   | 0.7945      | 0.0448  | 1.4584  | 0.0405 | 0.0901
+14    | Prior Research on Text as Data                   | 2012.0000  | 2022.0000 | 51.3369 | 64.0155 | 660.0000 | 1031.0000        | 12.6786   | 0.6820      | -0.3884 | 1.5488  | 0.4349 | 0.5240
+9     | Improving F1 Score with State-of-the-Art Methods | 2012.0000  | 2022.0000 | 40.1070 | 50.6305 | 522.0000 | 1031.0000        | 10.5235   | 0.7037      | -0.2242 | 1.3844  | 0.0866 | 0.1574
+15    | Text Encoder for Sequence Representation         | 2012.0000  | 2022.0000 | 46.5241 | 56.9350 | 587.0000 | 1031.0000        | 10.4110   | -0.0327     | -0.4692 | 1.3709  | 1.0000 | 1.0000
+2     | BERT Embeddings for Text Evaluation              | 2012.0000  | 2022.0000 | 28.8770 | 38.4093 | 396.0000 | 1031.0000        | 9.5323    | 0.0000      | -0.5928 | 0.9532  | 1.0000 | 1.0000
+11    | Text as Data in Figures and Examples             | 2012.0000  | 2022.0000 | 24.0642 | 32.4927 | 335.0000 | 1031.0000        | 8.4286    | 0.5934      | 0.0936  | 1.1254  | 0.0405 | 0.0901
+6     | Data Set Sizes for Training, Dev, Test           | 2012.0000  | 2022.0000 | 25.1337 | 33.0747 | 341.0000 | 1031.0000        | 7.9410    | 0.1120      | -0.4699 | 0.8858  | 0.6481 | 0.7201
+18    | Data Presentation in Research Papers             | 2012.0000  | 2022.0000 | 17.1123 | 24.9273 | 257.0000 | 1031.0000        | 7.8150    | 0.2921      | -0.2069 | 1.1396  | 0.1646 | 0.2532
+12    | Sentence Length in Document Pairs                | 2012.0000  | 2022.0000 | 25.6684 | 26.0912 | 269.0000 | 1031.0000        | 0.4227    | -0.2881     | -0.8130 | 0.2413  | 0.4454 | 0.5240
+13    | Contextual word embedding vectors                | 2012.0000  | 2022.0000 | 22.9947 | 23.1814 | 239.0000 | 1031.0000        | 0.1867    | -0.9485     | -2.1952 | 0.3422  | 0.2183 | 0.3119
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/reference_trends.csv. No missing significance test is invented.
+
+ACTIVITY trends — largest absolute first/last prevalence changes
+Topic | Title                                            | First year | Last year | First %  | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+--------------------------------------------------+------------+-----------+----------+---------+-----------+------------------+-----------+-------------+---------+---------+--------+-------
+5     | Pretrained Models vs Baseline Train              | 2012.0000  | 2022.0000 | 67.9144  | 93.0165 | 959.0000  | 1031.0000        | 25.1021   | 2.7806      | 2.2621  | 3.2580  | 0.0000 | 0.0003
+10    | BERT Baseline Model Training Comparison          | 2012.0000  | 2022.0000 | 78.0749  | 93.9864 | 969.0000  | 1031.0000        | 15.9116   | 2.0419      | 1.4050  | 2.9184  | 0.0008 | 0.0051
+19    | Publicly Available Text Data on GitHub           | 2012.0000  | 2022.0000 | 71.1230  | 86.7119 | 894.0000  | 1031.0000        | 15.5889   | 1.6694      | 1.2684  | 2.8310  | 0.0016 | 0.0080
+8     | Evaluating questions in large sentence pairs     | 2012.0000  | 2022.0000 | 82.8877  | 93.0165 | 959.0000  | 1031.0000        | 10.1288   | 0.8130      | 0.0726  | 1.3883  | 0.0405 | 0.1158
+13    | Contextual word embedding vectors                | 2012.0000  | 2022.0000 | 85.0267  | 76.3337 | 787.0000  | 1031.0000        | -8.6931   | -0.8693     | -3.3547 | 0.9994  | 0.3587 | 0.5124
+17    | Multi-Task Text Classification Problem           | 2012.0000  | 2022.0000 | 85.0267  | 93.4045 | 963.0000  | 1031.0000        | 8.3777    | 0.8140      | 0.5184  | 1.2537  | 0.0003 | 0.0033
+12    | Sentence Length in Document Pairs                | 2012.0000  | 2022.0000 | 87.1658  | 81.1833 | 837.0000  | 1031.0000        | -5.9825   | -0.7390     | -1.1031 | -0.0514 | 0.0405 | 0.1158
+14    | Prior Research on Text as Data                   | 2012.0000  | 2022.0000 | 94.1176  | 97.2842 | 1003.0000 | 1031.0000        | 3.1665    | 0.2430      | -0.1618 | 0.5563  | 0.4454 | 0.5938
+1     | Evaluating Experimental Art State Results        | 2012.0000  | 2022.0000 | 91.4439  | 94.5684 | 975.0000  | 1031.0000        | 3.1245    | 0.1839      | -0.1029 | 0.6134  | 0.1646 | 0.3657
+2     | BERT Embeddings for Text Evaluation              | 2012.0000  | 2022.0000 | 96.2567  | 94.4714 | 974.0000  | 1031.0000        | -1.7853   | -0.1986     | -0.4932 | 0.1427  | 0.1210 | 0.3024
+6     | Data Set Sizes for Training, Dev, Test           | 2012.0000  | 2022.0000 | 96.2567  | 94.4714 | 974.0000  | 1031.0000        | -1.7853   | -0.3161     | -0.5499 | 0.2499  | 0.2830 | 0.4716
+16    | Comparing tasks across languages and domains     | 2012.0000  | 2022.0000 | 90.9091  | 92.6285 | 955.0000  | 1031.0000        | 1.7194    | 0.1719      | -0.3238 | 0.9547  | 0.5423 | 0.6380
+0     | Natural Language Translation Task Analysis       | 2012.0000  | 2022.0000 | 98.9305  | 97.2842 | 1003.0000 | 1031.0000        | -1.6463   | 0.0449      | -0.1978 | 0.1906  | 0.7612 | 0.8457
+18    | Data Presentation in Research Papers             | 2012.0000  | 2022.0000 | 82.8877  | 83.8991 | 865.0000  | 1031.0000        | 1.0114    | 0.0742      | -0.5826 | 1.1507  | 0.8793 | 0.9255
+4     | Method and Datasets Used in Experiments          | 2012.0000  | 2022.0000 | 97.3262  | 98.1571 | 1012.0000 | 1031.0000        | 0.8309    | 0.0000      | -0.2254 | 0.5247  | 1.0000 | 1.0000
+3     | Pre-labeled corpus for training annotators       | 2012.0000  | 2022.0000 | 94.1176  | 94.8594 | 978.0000  | 1031.0000        | 0.7417    | 0.1162      | -0.1166 | 0.3605  | 0.2183 | 0.4187
+9     | Improving F1 Score with State-of-the-Art Methods | 2012.0000  | 2022.0000 | 97.3262  | 98.0601 | 1011.0000 | 1031.0000        | 0.7339    | 0.0734      | -0.1201 | 0.3777  | 0.3587 | 0.5124
+7     | Text as Data Misinterpretation 2014-2021         | 2012.0000  | 2022.0000 | 98.9305  | 99.4180 | 1025.0000 | 1031.0000        | 0.4876    | 0.1345      | 0.0017  | 0.3134  | 0.0405 | 0.1158
+15    | Text Encoder for Sequence Representation         | 2012.0000  | 2022.0000 | 100.0000 | 99.5150 | 1026.0000 | 1031.0000        | -0.4850   | -0.0289     | -0.0774 | 0.0085  | 0.2303 | 0.4187
+11    | Text as Data in Figures and Examples             | 2012.0000  | 2022.0000 | 92.5134  | 92.8225 | 957.0000  | 1031.0000        | 0.3091    | 0.0684      | -0.1095 | 0.4112  | 0.5423 | 0.6380
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/nmf/seed_0/activity_trends.csv. No missing significance test is invented.
+
+Input/reference topic overlap (descriptive; NOT extraction precision/recall)
+Reference provenance | Rows      | Scored    | Mean Jaccard
+---------------------+-----------+-----------+-------------
+acl_supplied         | 4005.0000 | 4005.0000 | 0.5191      
+
+Input/reference temporal agreement
+Topic | Years | Spearman              | Mean absolute gap (fraction)
+------+-------+-----------------------+-----------------------------
+0     | 11    | 0.6272727272727273    | 0.2925009821595321          
+1     | 11    | 0.5181818181818182    | 0.33294873814634984         
+2     | 11    | 0.18181818181818182   | 0.4140011376771808          
+3     | 11    | -0.3727272727272728   | 0.35186999294434657         
+4     | 11    | -0.009090909090909092 | 0.3598489421443977          
+5     | 11    | 0.8000000000000002    | 0.3347597878308357          
+6     | 11    | 0.3727272727272728    | 0.4916683815810726          
+7     | 11    | 0.2687934080711411    | 0.4240679844077851          
+8     | 11    | 0.7636363636363637    | 0.4361063953942184          
+9     | 11    | 0.22727272727272727   | 0.32074472310078544         
+10    | 11    | 0.7636363636363637    | 0.33457867809938363         
+11    | 11    | -0.018181818181818184 | 0.5072942183072714          
+12    | 11    | 0.9090909090909091    | 0.43574281227919587         
+13    | 11    | 0.9363636363636365    | 0.4242322382686556          
+14    | 11    | 0.23636363636363636   | 0.05201924155975797         
+15    | 11    | 0.3221930381127963    | 0.2030175796981082          
+16    | 11    | 0.20909090909090913   | 0.4129244119382138          
+17    | 11    | 0.29090909090909095   | 0.35567334976837395         
+18    | 11    | 0.7454545454545456    | 0.4567668276807169          
+19    | 11    | 0.5636363636363637    | 0.45021205194645036         
+Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/llm_topic_labels_and_human_template.csv.
+Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_1/training_assignments.csv; labels: absent.
+Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_2/training_assignments.csv; labels: absent.
+Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_3/training_assignments.csv; labels: absent.
+
+LDA — available seeds (no missing seed is counted as zero)
+Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability          
+-----+---------+--------+-----------+------------+--------------+-----------------------------+-----------------------
+0    | 20.0000 | 0.1264 | 0.9200    | NA         | 0.0163       | npmi,diversity,outlier_rate | 12 tables; titles 20  
+1    | 20.0000 | 0.1280 | 0.8750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+2    | 20.0000 | 0.1301 | 0.8700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+3    | 20.0000 | 0.1274 | 0.8950    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+4    | NA      | NA     | NA        | NA         | NA           | NA                          | No usable topics table
+
+Available-seed summaries (sample SD; NA for fewer than two observations)
+Metric       | Observed seeds | Mean    | SD    
+-------------+----------------+---------+-------
+topics       | 4.0000         | 20.0000 | 0.0000
+npmi         | 4.0000         | 0.1280  | 0.0016
+diversity    | 4.0000         | 0.8900  | 0.0227
+silhouette   | 0.0000         | NA      | NA    
+outlier_rate | 4.0000         | 0.0163  | 0.0000
+
+Assignment stability (reconstructed only on identical training units; includes outlier label)
+Seed A | Seed B | Units        | ARI    | Source       
+-------+--------+--------------+--------+--------------
+0      | 1      | 1168951.0000 | 0.2274 | reconstructed
+0      | 2      | 1168951.0000 | 0.2161 | reconstructed
+0      | 3      | 1168951.0000 | 0.2410 | reconstructed
+1      | 2      | 1168951.0000 | 0.2315 | reconstructed
+1      | 3      | 1168951.0000 | 0.2633 | reconstructed
+2      | 3      | 1168951.0000 | 0.2170 | reconstructed
+
+Detailed tables use seed_0: lowest seed with descriptive tables, or lowest available seed if none have them. No best-seed selection.
+
+Topic dictionary (keyword fallback where no LLM title exists)
+Topic | Title / fallback                              | Keywords                                                                                             
+------+-----------------------------------------------+------------------------------------------------------------------------------------------------------
+0     | Textual Graph and Table Interpretation        | figure; example; graph; shown; shows; node; table; nodes; right; left                                
+1     | Text as Data Misinterpretation in AL Research | al; et; 2019; 2018; 2020; 2017; 2016; 2015; 2014; 2021                                               
+2     | Analyzing Methods in Research Papers          | work; section; paper; methods; approach; method; proposed; analysis; study; previous                 
+3     | Evaluating Translation Data Results           | domain; evaluation; translation; english; experiments; evaluate; data; different; results; datasets  
+4     | Semantic Parsing Tree Structure Analysis      | semantic; structure; syntactic; dependency; parsing; tree; rules; discourse; parser; form            
+5     | Dataset Size and Training Examples            | set; number; test; dataset; training; 10; sentences; size; examples; pairs                           
+6     | Log Vector Matrix Analysis                    | log; com; matrix; xi; vector; github; th; denotes; denote; let                                       
+7     | Neural Network Input Representation Model     | attention; model; layer; embeddings; encoder; network; representations; input; neural; representation
+8     | Large Scale Data Annotation Time Details      | data; training; large; time; annotation; appendix; labeled; scale; code; details                     
+9     | Text as Data Features 2008-2012               | topic; features; pos; used; 2010; 2011; 2008; using; 2009; 2012                                      
+10    | Model Accuracy Improvement Over Baseline      | performance; results; model; table; better; models; accuracy; baseline; best; state                  
+11    | Value-based Search Algorithm Similarity Space | similarity; space; algorithm; distribution; search; value; values; decoding; distance; model         
+12    | Relation Classification in Text Data          | relation; label; knowledge; task; relations; event; classification; labels; sentiment; extraction    
+13    | Model Evaluation Metrics and Loss Functions   | score; loss; scores; high; model; function; higher; probability; recall; measure                     
+14    | Text-to-Question Generation from Documents    | question; generation; answer; questions; document; dialogue; text; response; query; summarization    
+15    | Cross-Language NLP Text Task Analysis         | language; text; languages; tasks; natural; nlp; cross; image; speech; visual                         
+16    | Model Bias in Human Task Features             | model; models; make; bias; features; specific; human; errors; task; information                      
+17    | Social Media Named Entity Recognition         | entity; news; entities; types; user; mentions; users; social; named; mention                         
+18    | Contextual Token Level Target Phrase Analysis | word; words; sentence; target; source; level; token; tokens; context; phrase                         
+19    | Pre-trained BERT models for task fine-tuning  | model; learning; trained; models; training; pre; bert; task; fine; parameters                        
+
+REFERENCE trends — largest absolute first/last prevalence changes
+Topic | Title                                         | First year | Last year | First % | Last %  | Last n   | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+-----------------------------------------------+------------+-----------+---------+---------+----------+------------------+-----------+-------------+---------+---------+--------+-------
+1     | Text as Data Misinterpretation in AL Research | 2012.0000  | 2022.0000 | 18.7166 | 45.5868 | 470.0000 | 1031.0000        | 26.8702   | 2.1519      | 1.3478  | 3.2094  | 0.0000 | 0.0001
+19    | Pre-trained BERT models for task fine-tuning  | 2012.0000  | 2022.0000 | 21.9251 | 43.5500 | 449.0000 | 1031.0000        | 21.6248   | 2.6370      | 1.9632  | 3.2837  | 0.0000 | 0.0003
+14    | Text-to-Question Generation from Documents    | 2012.0000  | 2022.0000 | 10.6952 | 30.9408 | 319.0000 | 1031.0000        | 20.2456   | 1.9543      | 1.3715  | 2.1465  | 0.0000 | 0.0001
+7     | Neural Network Input Representation Model     | 2012.0000  | 2022.0000 | 11.2299 | 29.9709 | 309.0000 | 1031.0000        | 18.7410   | 2.3860      | 0.1383  | 4.4116  | 0.0405 | 0.0901
+9     | Text as Data Features 2008-2012               | 2012.0000  | 2022.0000 | 34.2246 | 16.5858 | 171.0000 | 1031.0000        | -17.6388  | -2.7994     | -3.6737 | -1.7639 | 0.0008 | 0.0038
+8     | Large Scale Data Annotation Time Details      | 2012.0000  | 2022.0000 | 30.4813 | 46.8477 | 483.0000 | 1031.0000        | 16.3664   | 0.4936      | -0.1088 | 1.4946  | 0.0609 | 0.1218
+2     | Analyzing Methods in Research Papers          | 2012.0000  | 2022.0000 | 52.9412 | 68.1862 | 703.0000 | 1031.0000        | 15.2451   | 0.3653      | -0.6012 | 1.6752  | 0.3587 | 0.4220
+16    | Model Bias in Human Task Features             | 2012.0000  | 2022.0000 | 35.2941 | 50.4365 | 520.0000 | 1031.0000        | 15.1424   | 0.9287      | 0.2939  | 1.5791  | 0.0165 | 0.0473
+10    | Model Accuracy Improvement Over Baseline      | 2012.0000  | 2022.0000 | 37.9679 | 52.4733 | 541.0000 | 1031.0000        | 14.5054   | 0.5609      | 0.1514  | 1.3335  | 0.0099 | 0.0398
+6     | Log Vector Matrix Analysis                    | 2012.0000  | 2022.0000 | 16.0428 | 27.6431 | 285.0000 | 1031.0000        | 11.6003   | 0.6280      | -0.4807 | 1.6921  | 0.2183 | 0.3359
+12    | Relation Classification in Text Data          | 2012.0000  | 2022.0000 | 21.9251 | 33.4627 | 345.0000 | 1031.0000        | 11.5375   | 0.4537      | -0.1004 | 1.2453  | 0.2183 | 0.3359
+15    | Cross-Language NLP Text Task Analysis         | 2012.0000  | 2022.0000 | 29.4118 | 40.8341 | 421.0000 | 1031.0000        | 11.4224   | 0.1798      | -0.6190 | 0.9388  | 0.4454 | 0.4949
+5     | Dataset Size and Training Examples            | 2012.0000  | 2022.0000 | 27.8075 | 36.6634 | 378.0000 | 1031.0000        | 8.8559    | 0.5251      | -0.4371 | 1.6260  | 0.3587 | 0.4220
+13    | Model Evaluation Metrics and Loss Functions   | 2012.0000  | 2022.0000 | 26.7380 | 34.1416 | 352.0000 | 1031.0000        | 7.4036    | 0.3949      | -0.2091 | 1.1185  | 0.2830 | 0.4042
+3     | Evaluating Translation Data Results           | 2012.0000  | 2022.0000 | 29.4118 | 36.0815 | 372.0000 | 1031.0000        | 6.6697    | 0.2033      | -0.1016 | 0.8064  | 0.1646 | 0.2992
+11    | Value-based Search Algorithm Similarity Space | 2012.0000  | 2022.0000 | 28.8770 | 34.8206 | 359.0000 | 1031.0000        | 5.9436    | -0.4769     | -1.0487 | 0.5551  | 0.5423 | 0.5423
+0     | Textual Graph and Table Interpretation        | 2012.0000  | 2022.0000 | 19.7861 | 25.6062 | 264.0000 | 1031.0000        | 5.8201    | 0.0628      | -0.3570 | 0.6812  | 0.3587 | 0.4220
+4     | Semantic Parsing Tree Structure Analysis      | 2012.0000  | 2022.0000 | 31.0160 | 28.6130 | 295.0000 | 1031.0000        | -2.4030   | -1.2310     | -2.0552 | -0.5140 | 0.0165 | 0.0473
+18    | Contextual Token Level Target Phrase Analysis | 2012.0000  | 2022.0000 | 32.6203 | 31.6198 | 326.0000 | 1031.0000        | -1.0005   | -0.9058     | -1.2849 | -0.1001 | 0.0264 | 0.0660
+17    | Social Media Named Entity Recognition         | 2012.0000  | 2022.0000 | 28.3422 | 29.2919 | 302.0000 | 1031.0000        | 0.9497    | -0.1784     | -0.8519 | 0.4183  | 0.5322 | 0.5423
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/reference_trends.csv. No missing significance test is invented.
+
+ACTIVITY trends — largest absolute first/last prevalence changes
+Topic | Title                                         | First year | Last year | First % | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+-----------------------------------------------+------------+-----------+---------+---------+-----------+------------------+-----------+-------------+---------+---------+--------+-------
+9     | Text as Data Features 2008-2012               | 2012.0000  | 2022.0000 | 99.4652 | 62.7546 | 647.0000  | 1031.0000        | -36.7106  | -3.9672     | -5.4400 | -2.2109 | 0.0001 | 0.0013
+7     | Neural Network Input Representation Model     | 2012.0000  | 2022.0000 | 59.3583 | 87.9728 | 907.0000  | 1031.0000        | 28.6146   | 3.3236      | 0.8918  | 5.5050  | 0.0264 | 0.0528
+19    | Pre-trained BERT models for task fine-tuning  | 2012.0000  | 2022.0000 | 67.3797 | 93.8894 | 968.0000  | 1031.0000        | 26.5097   | 2.9016      | 2.2106  | 3.7307  | 0.0001 | 0.0013
+14    | Text-to-Question Generation from Documents    | 2012.0000  | 2022.0000 | 51.8717 | 74.9758 | 773.0000  | 1031.0000        | 23.1041   | 2.6008      | 1.5603  | 3.4413  | 0.0003 | 0.0022
+4     | Semantic Parsing Tree Structure Analysis      | 2012.0000  | 2022.0000 | 88.2353 | 73.6178 | 759.0000  | 1031.0000        | -14.6174  | -1.7868     | -2.7241 | -0.7386 | 0.0099 | 0.0284
+1     | Text as Data Misinterpretation in AL Research | 2012.0000  | 2022.0000 | 91.4439 | 99.4180 | 1025.0000 | 1031.0000        | 7.9742    | 0.8747      | 0.2317  | 1.4422  | 0.0016 | 0.0080
+11    | Value-based Search Algorithm Similarity Space | 2012.0000  | 2022.0000 | 95.1872 | 88.8458 | 916.0000  | 1031.0000        | -6.3414   | -0.6368     | -1.0460 | -0.0163 | 0.0264 | 0.0528
+18    | Contextual Token Level Target Phrase Analysis | 2012.0000  | 2022.0000 | 95.7219 | 89.9127 | 927.0000  | 1031.0000        | -5.8092   | -0.7931     | -1.2109 | -0.2056 | 0.0165 | 0.0414
+15    | Cross-Language NLP Text Task Analysis         | 2012.0000  | 2022.0000 | 85.0267 | 89.9127 | 927.0000  | 1031.0000        | 4.8860    | 0.1079      | -0.7108 | 0.6278  | 0.5423 | 0.5423
+0     | Textual Graph and Table Interpretation        | 2012.0000  | 2022.0000 | 93.5829 | 88.7488 | 915.0000  | 1031.0000        | -4.8341   | -0.4426     | -0.7225 | -0.0000 | 0.0423 | 0.0770
+17    | Social Media Named Entity Recognition         | 2012.0000  | 2022.0000 | 83.9572 | 79.7284 | 822.0000  | 1031.0000        | -4.2288   | -0.6298     | -1.0335 | -0.3338 | 0.0057 | 0.0190
+12    | Relation Classification in Text Data          | 2012.0000  | 2022.0000 | 80.7487 | 84.3841 | 870.0000  | 1031.0000        | 3.6354    | 0.2588      | -0.2760 | 0.8378  | 0.2183 | 0.2569
+6     | Log Vector Matrix Analysis                    | 2012.0000  | 2022.0000 | 91.9786 | 95.2473 | 982.0000  | 1031.0000        | 3.2687    | 0.3285      | 0.1618  | 0.8690  | 0.0049 | 0.0190
+10    | Model Accuracy Improvement Over Baseline      | 2012.0000  | 2022.0000 | 94.6524 | 97.6722 | 1007.0000 | 1031.0000        | 3.0198    | 0.1398      | -0.1022 | 0.5565  | 0.2183 | 0.2569
+5     | Dataset Size and Training Examples            | 2012.0000  | 2022.0000 | 98.3957 | 96.3143 | 993.0000  | 1031.0000        | -2.0815   | -0.2891     | -0.6245 | 0.2033  | 0.1210 | 0.1613
+16    | Model Bias in Human Task Features             | 2012.0000  | 2022.0000 | 97.8610 | 96.0233 | 990.0000  | 1031.0000        | -1.8377   | 0.1980      | -0.1838 | 0.4800  | 0.3587 | 0.3776
+3     | Evaluating Translation Data Results           | 2012.0000  | 2022.0000 | 86.6310 | 88.1668 | 909.0000  | 1031.0000        | 1.5358    | 0.1386      | -0.2644 | 0.7206  | 0.2830 | 0.3144
+13    | Model Evaluation Metrics and Loss Functions   | 2012.0000  | 2022.0000 | 95.7219 | 94.4714 | 974.0000  | 1031.0000        | -1.2505   | -0.1962     | -0.4290 | 0.0366  | 0.0866 | 0.1237
+2     | Analyzing Methods in Research Papers          | 2012.0000  | 2022.0000 | 98.3957 | 99.5150 | 1026.0000 | 1031.0000        | 1.1193    | 0.1134      | -0.0174 | 0.4138  | 0.0602 | 0.0926
+8     | Large Scale Data Annotation Time Details      | 2012.0000  | 2022.0000 | 95.7219 | 95.8293 | 988.0000  | 1031.0000        | 0.1074    | 0.2581      | -0.0314 | 0.4622  | 0.0602 | 0.0926
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/mistral/all/216905.cm_20260910T211614/acl/topics/lda/seed_0/activity_trends.csv. No missing significance test is invented.
+
+Input/reference topic overlap (descriptive; NOT extraction precision/recall)
+Reference provenance | Rows      | Scored    | Mean Jaccard
+---------------------+-----------+-----------+-------------
+acl_supplied         | 4005.0000 | 4005.0000 | 0.4924      
+
+Input/reference temporal agreement
+Topic | Years | Spearman             | Mean absolute gap (fraction)
+------+-------+----------------------+-----------------------------
+0     | 11    | 0.21818181818181823  | 0.5288940828350547          
+1     | 11    | 0.8454545454545455   | 0.44461625525847487         
+2     | 11    | 0.5727272727272729   | 0.03951247056105467         
+3     | 11    | -0.19178282129043372 | 0.37519130061768635         
+4     | 11    | 0.9181818181818183   | 0.35840260633693233         
+5     | 11    | 0.21412356236175645  | 0.4746705059312543          
+6     | 11    | 0.5636363636363637   | 0.5619502608884089          
+7     | 11    | 0.9181818181818183   | 0.3790741193147315          
+8     | 11    | -0.3234632537805257  | 0.3275174229531905          
+9     | 11    | 0.9272727272727275   | 0.41632598553230443         
+10    | 11    | 0.23636363636363636  | 0.25272850137416775         
+11    | 11    | 0.8000000000000002   | 0.4213668312690997          
+12    | 11    | 0.4965844318602437   | 0.38098322628709236         
+13    | 11    | -0.13211879379767952 | 0.46667653648416585         
+14    | 11    | 0.8636363636363636   | 0.3080161668956808          
+15    | 11    | 0.5727272727272729   | 0.35053775928019576         
+16    | 11    | 0.7181818181818183   | 0.2975204408255532          
+17    | 11    | 0.7545454545454545   | 0.37985234170274773         
+18    | 11    | 0.7272727272727273   | 0.41386205767496753         
+19    | 11    | 0.881818181818182    | 0.3823169194488893          
+BERTOPIC: no saved method directory; unavailable, not a failed score.
+
+FORECASTING
+Unavailable: no usable saved records.
+No completed forecast summary/fold results found. Do not claim predictive improvement from these artifacts.
+
+PAPER/APPENDIX STATUS NOTE:
+This acl snapshot contains NMF seeds 0,1,2,3,4; LDA seeds 0,1,2,3.
+Only the observed seeds contribute to reported summaries. Missing seeds/methods were not imputed.
+These artifacts support descriptive analysis only; no forecasting result is available.
+
+====================================================================================================
+MODEL: qwen | RUN: 216906.cm_20260910T211619
+Path: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619
+Original run status: NO completion marker; partial snapshot
+Configuration: {"activity_source": "input", "bootstrap": 1000, "chat_template": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/chat_template.jinja", "chunk_tokens": 6000, "context_length": 16384, "data_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data", "dataset": "all", "embedding_model": "/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2", "experiment": "all", "horizons": [1, 2, 3], "max_features": 20000, "max_tokens": 1024, "methods": ["nmf", "lda", "bertopic"], "min_cluster_size": 10, "min_train_origins": 3, "model": "qwen", "model_dir": "/lstr/sahara/datalab-ml/ibrahim/models/qwen3_8b", "neurips_year_column": null, "no_topic_labels": false, "num_samples": -1, "num_topics": 20, "out_dir": "/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619", "ridge_alpha": 0.01, "seed": 42, "seeds": [0, 1, 2, 3, 4], "trend_window": 3, "warmup_years": 3}
+
+--------------------------------------------------------------------------------
+SCOPE: ACL
+
+Dataset coverage
+Venue | Year   | Papers | With reference | Missing reference
+------+--------+--------+----------------+------------------
+acl   | 2012.0 | 187    | 106            | 81               
+acl   | 2013.0 | 328    | 240            | 88               
+acl   | 2014.0 | 286    | 205            | 81               
+acl   | 2015.0 | 33     | 19             | 14               
+acl   | 2016.0 | 328    | 227            | 101              
+acl   | 2017.0 | 302    | 220            | 82               
+acl   | 2018.0 | 381    | 260            | 121              
+acl   | 2019.0 | 753    | 550            | 203              
+acl   | 2020.0 | 861    | 624            | 237              
+acl   | 2021.0 | 1165   | 814            | 351              
+acl   | 2022.0 | 1031   | 740            | 291              
+Coverage source: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/coverage.csv; total analyzed papers in this scope: 5655.
+Reference status: {"available": 4005, "missing": 1650, "fallback_used": false}
+Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/llm_topic_labels_and_human_template.csv.
+Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_1/training_assignments.csv; labels: absent.
+Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_2/training_assignments.csv; labels: absent.
+Seed 3 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_3/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_3/training_assignments.csv; labels: absent.
+Seed 4 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_4/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_4/training_assignments.csv; labels: absent.
+
+NMF — available seeds (no missing seed is counted as zero)
+Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability        
+-----+---------+--------+-----------+------------+--------------+-----------------------------+---------------------
+0    | 20.0000 | 0.1436 | 0.7750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 12 tables; titles 20
+1    | 20.0000 | 0.1377 | 0.7850    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+2    | 20.0000 | 0.1346 | 0.7750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+3    | 20.0000 | 0.1397 | 0.7700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+4    | 20.0000 | 0.1381 | 0.7700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0  
+
+Available-seed summaries (sample SD; NA for fewer than two observations)
+Metric       | Observed seeds | Mean    | SD    
+-------------+----------------+---------+-------
+topics       | 5.0000         | 20.0000 | 0.0000
+npmi         | 5.0000         | 0.1387  | 0.0033
+diversity    | 5.0000         | 0.7750  | 0.0061
+silhouette   | 0.0000         | NA      | NA    
+outlier_rate | 5.0000         | 0.0163  | 0.0000
+
+Assignment stability (reconstructed only on identical training units; includes outlier label)
+Seed A | Seed B | Units        | ARI    | Source       
+-------+--------+--------------+--------+--------------
+0      | 1      | 1168951.0000 | 0.4183 | reconstructed
+0      | 2      | 1168951.0000 | 0.5818 | reconstructed
+0      | 3      | 1168951.0000 | 0.4670 | reconstructed
+0      | 4      | 1168951.0000 | 0.6089 | reconstructed
+1      | 2      | 1168951.0000 | 0.4338 | reconstructed
+1      | 3      | 1168951.0000 | 0.4663 | reconstructed
+1      | 4      | 1168951.0000 | 0.4937 | reconstructed
+2      | 3      | 1168951.0000 | 0.5188 | reconstructed
+2      | 4      | 1168951.0000 | 0.7429 | reconstructed
+3      | 4      | 1168951.0000 | 0.5329 | reconstructed
+
+Detailed tables use seed_0: lowest seed with descriptive tables, or lowest available seed if none have them. No best-seed selection.
+
+Topic dictionary (keyword fallback where no LLM title exists)
+Topic | Title / fallback                                                                | Keywords                                                                                           
+------+---------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------
+0     | Natural language translation between source and target languages                | language; target; source; natural; translation; languages; english; tasks; domain; text            
+1     | Experimental results demonstrate best state of the art in art evaluation report | results; experimental; report; evaluation; reported; art; state; best; present; demonstrate        
+2     | Use BERT embeddings to train model with loss rate evaluation                    | use; evaluation; make; following; features; embeddings; bert; train; loss; rate                    
+3     | Pre-domain labeled data used for training with parallel examples                | data; training; pre; domain; labeled; using; examples; corpus; used; parallel                      
+4     | proposed method details described in appendix with datasets and experiments     | section; experiments; used; method; datasets; details; proposed; appendix; described; approach     
+5     | Pretrained BERT-based models as a baseline for large neural models              | models; trained; pre; neural; bert; based; baseline; large; pretrained; train                      
+6     | Dataset size and split for training, dev, and test sets                         | set; test; development; validation; size; 10; number; sets; training; dev                          
+7     | Comparative analysis of research papers across years                            | et; al; 2019; 2018; 2020; 2017; 2016; 2015; 2021; 2014                                             
+8     | New dataset containing human-annotated question-answer pairs                    | dataset; question; contains; questions; new; evaluation; sentences; human; pairs; large            
+9     | methods to achieve best performance and improve f1 score                        | performance; better; best; state; score; art; achieves; improve; methods; f1                       
+10    | Proposed model outperforms baseline with BERT base parameters                   | model; trained; parameters; train; proposed; baseline; bert; base; pre; outperforms                
+11    | Figure illustrates architecture with example overview                           | figure; example; shown; shows; architecture; illustrated; illustrates; examples; overview; consider
+12    | Analyzing sentence-level features in document pairs                             | sentence; sentences; level; words; given; source; pairs; document; target; length                  
+13    | Word embeddings and contextual vector representations                           | word; embeddings; words; embedding; vectors; vector; level; target; character; context             
+14    | Future research based on prior knowledge and recent paper work                  | work; related; future; previous; knowledge; prior; research; learning; recent; paper               
+15    | Attention-based encoder for sequence representation                             | based; attention; input; information; layer; sequence; features; text; encoder; representation     
+16    | Comparing different languages, tasks, and methods across domains                | different; words; languages; types; tasks; methods; domains; datasets; number; similar             
+17    | Fine-grained classification of text in multi-task learning                      | task; learning; multi; tasks; classification; specific; fine; problem; domain; text                
+18    | Table presents statistics, examples, and datasets from appendix                 | table; shows; shown; statistics; examples; datasets; scores; appendix; presents; listed            
+19    | Publicly available code repositories on GitHub                                  | com; github; https; available; code; 1https; www; 2https; publicly; 3https                         
+
+REFERENCE trends — largest absolute first/last prevalence changes
+Topic | Title                                                                           | First year | Last year | First % | Last %  | Last n   | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+---------------------------------------------------------------------------------+------------+-----------+---------+---------+----------+------------------+-----------+-------------+---------+---------+--------+-------
+5     | Pretrained BERT-based models as a baseline for large neural models              | 2012.0000  | 2022.0000 | 20.8556 | 43.1620 | 445.0000 | 1031.0000        | 22.3064   | 2.2379      | 1.5331  | 2.7825  | 0.0000 | 0.0005
+8     | New dataset containing human-annotated question-answer pairs                    | 2012.0000  | 2022.0000 | 20.3209 | 40.2522 | 415.0000 | 1031.0000        | 19.9313   | 1.2543      | 0.6039  | 1.9289  | 0.0003 | 0.0017
+7     | Comparative analysis of research papers across years                            | 2012.0000  | 2022.0000 | 28.8770 | 47.4297 | 489.0000 | 1031.0000        | 18.5527   | 1.2993      | 0.7508  | 1.9676  | 0.0001 | 0.0009
+16    | Comparing different languages, tasks, and methods across domains                | 2012.0000  | 2022.0000 | 19.7861 | 37.0514 | 382.0000 | 1031.0000        | 17.2653   | 0.5358      | 0.0942  | 1.6547  | 0.0264 | 0.0754
+10    | Proposed model outperforms baseline with BERT base parameters                   | 2012.0000  | 2022.0000 | 24.5989 | 41.2221 | 425.0000 | 1031.0000        | 16.6232   | 1.1588      | 0.8130  | 1.6561  | 0.0000 | 0.0005
+1     | Experimental results demonstrate best state of the art in art evaluation report | 2012.0000  | 2022.0000 | 28.8770 | 45.3928 | 468.0000 | 1031.0000        | 16.5158   | 0.8033      | 0.2485  | 1.6078  | 0.0099 | 0.0398
+0     | Natural language translation between source and target languages                | 2012.0000  | 2022.0000 | 37.4332 | 51.6974 | 533.0000 | 1031.0000        | 14.2642   | 0.6634      | -0.4069 | 1.4507  | 0.1646 | 0.2532
+4     | proposed method details described in appendix with datasets and experiments     | 2012.0000  | 2022.0000 | 34.2246 | 48.3996 | 499.0000 | 1031.0000        | 14.1750   | 0.7186      | -0.4425 | 1.7923  | 0.2830 | 0.3773
+3     | Pre-domain labeled data used for training with parallel examples                | 2012.0000  | 2022.0000 | 33.1551 | 47.2357 | 487.0000 | 1031.0000        | 14.0806   | 0.7330      | -0.0760 | 1.5475  | 0.0602 | 0.1203
+19    | Publicly available code repositories on GitHub                                  | 2012.0000  | 2022.0000 | 11.7647 | 25.7032 | 265.0000 | 1031.0000        | 13.9385   | 0.8474      | 0.1994  | 1.6822  | 0.0165 | 0.0551
+17    | Fine-grained classification of text in multi-task learning                      | 2012.0000  | 2022.0000 | 27.8075 | 40.7371 | 420.0000 | 1031.0000        | 12.9297   | 0.7945      | 0.0448  | 1.4584  | 0.0405 | 0.0901
+14    | Future research based on prior knowledge and recent paper work                  | 2012.0000  | 2022.0000 | 51.3369 | 64.0155 | 660.0000 | 1031.0000        | 12.6786   | 0.6820      | -0.3884 | 1.5488  | 0.4349 | 0.5240
+9     | methods to achieve best performance and improve f1 score                        | 2012.0000  | 2022.0000 | 40.1070 | 50.6305 | 522.0000 | 1031.0000        | 10.5235   | 0.7037      | -0.2242 | 1.3844  | 0.0866 | 0.1574
+15    | Attention-based encoder for sequence representation                             | 2012.0000  | 2022.0000 | 46.5241 | 56.9350 | 587.0000 | 1031.0000        | 10.4110   | -0.0327     | -0.4692 | 1.3709  | 1.0000 | 1.0000
+2     | Use BERT embeddings to train model with loss rate evaluation                    | 2012.0000  | 2022.0000 | 28.8770 | 38.4093 | 396.0000 | 1031.0000        | 9.5323    | 0.0000      | -0.5928 | 0.9532  | 1.0000 | 1.0000
+11    | Figure illustrates architecture with example overview                           | 2012.0000  | 2022.0000 | 24.0642 | 32.4927 | 335.0000 | 1031.0000        | 8.4286    | 0.5934      | 0.0936  | 1.1254  | 0.0405 | 0.0901
+6     | Dataset size and split for training, dev, and test sets                         | 2012.0000  | 2022.0000 | 25.1337 | 33.0747 | 341.0000 | 1031.0000        | 7.9410    | 0.1120      | -0.4699 | 0.8858  | 0.6481 | 0.7201
+18    | Table presents statistics, examples, and datasets from appendix                 | 2012.0000  | 2022.0000 | 17.1123 | 24.9273 | 257.0000 | 1031.0000        | 7.8150    | 0.2921      | -0.2069 | 1.1396  | 0.1646 | 0.2532
+12    | Analyzing sentence-level features in document pairs                             | 2012.0000  | 2022.0000 | 25.6684 | 26.0912 | 269.0000 | 1031.0000        | 0.4227    | -0.2881     | -0.8130 | 0.2413  | 0.4454 | 0.5240
+13    | Word embeddings and contextual vector representations                           | 2012.0000  | 2022.0000 | 22.9947 | 23.1814 | 239.0000 | 1031.0000        | 0.1867    | -0.9485     | -2.1952 | 0.3422  | 0.2183 | 0.3119
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/reference_trends.csv. No missing significance test is invented.
+
+ACTIVITY trends — largest absolute first/last prevalence changes
+Topic | Title                                                                           | First year | Last year | First %  | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+---------------------------------------------------------------------------------+------------+-----------+----------+---------+-----------+------------------+-----------+-------------+---------+---------+--------+-------
+5     | Pretrained BERT-based models as a baseline for large neural models              | 2012.0000  | 2022.0000 | 67.9144  | 93.0165 | 959.0000  | 1031.0000        | 25.1021   | 2.7806      | 2.2621  | 3.2580  | 0.0000 | 0.0003
+10    | Proposed model outperforms baseline with BERT base parameters                   | 2012.0000  | 2022.0000 | 78.0749  | 93.9864 | 969.0000  | 1031.0000        | 15.9116   | 2.0419      | 1.4050  | 2.9184  | 0.0008 | 0.0051
+19    | Publicly available code repositories on GitHub                                  | 2012.0000  | 2022.0000 | 71.1230  | 86.7119 | 894.0000  | 1031.0000        | 15.5889   | 1.6694      | 1.2684  | 2.8310  | 0.0016 | 0.0080
+8     | New dataset containing human-annotated question-answer pairs                    | 2012.0000  | 2022.0000 | 82.8877  | 93.0165 | 959.0000  | 1031.0000        | 10.1288   | 0.8130      | 0.0726  | 1.3883  | 0.0405 | 0.1158
+13    | Word embeddings and contextual vector representations                           | 2012.0000  | 2022.0000 | 85.0267  | 76.3337 | 787.0000  | 1031.0000        | -8.6931   | -0.8693     | -3.3547 | 0.9994  | 0.3587 | 0.5124
+17    | Fine-grained classification of text in multi-task learning                      | 2012.0000  | 2022.0000 | 85.0267  | 93.4045 | 963.0000  | 1031.0000        | 8.3777    | 0.8140      | 0.5184  | 1.2537  | 0.0003 | 0.0033
+12    | Analyzing sentence-level features in document pairs                             | 2012.0000  | 2022.0000 | 87.1658  | 81.1833 | 837.0000  | 1031.0000        | -5.9825   | -0.7390     | -1.1031 | -0.0514 | 0.0405 | 0.1158
+14    | Future research based on prior knowledge and recent paper work                  | 2012.0000  | 2022.0000 | 94.1176  | 97.2842 | 1003.0000 | 1031.0000        | 3.1665    | 0.2430      | -0.1618 | 0.5563  | 0.4454 | 0.5938
+1     | Experimental results demonstrate best state of the art in art evaluation report | 2012.0000  | 2022.0000 | 91.4439  | 94.5684 | 975.0000  | 1031.0000        | 3.1245    | 0.1839      | -0.1029 | 0.6134  | 0.1646 | 0.3657
+2     | Use BERT embeddings to train model with loss rate evaluation                    | 2012.0000  | 2022.0000 | 96.2567  | 94.4714 | 974.0000  | 1031.0000        | -1.7853   | -0.1986     | -0.4932 | 0.1427  | 0.1210 | 0.3024
+6     | Dataset size and split for training, dev, and test sets                         | 2012.0000  | 2022.0000 | 96.2567  | 94.4714 | 974.0000  | 1031.0000        | -1.7853   | -0.3161     | -0.5499 | 0.2499  | 0.2830 | 0.4716
+16    | Comparing different languages, tasks, and methods across domains                | 2012.0000  | 2022.0000 | 90.9091  | 92.6285 | 955.0000  | 1031.0000        | 1.7194    | 0.1719      | -0.3238 | 0.9547  | 0.5423 | 0.6380
+0     | Natural language translation between source and target languages                | 2012.0000  | 2022.0000 | 98.9305  | 97.2842 | 1003.0000 | 1031.0000        | -1.6463   | 0.0449      | -0.1978 | 0.1906  | 0.7612 | 0.8457
+18    | Table presents statistics, examples, and datasets from appendix                 | 2012.0000  | 2022.0000 | 82.8877  | 83.8991 | 865.0000  | 1031.0000        | 1.0114    | 0.0742      | -0.5826 | 1.1507  | 0.8793 | 0.9255
+4     | proposed method details described in appendix with datasets and experiments     | 2012.0000  | 2022.0000 | 97.3262  | 98.1571 | 1012.0000 | 1031.0000        | 0.8309    | 0.0000      | -0.2254 | 0.5247  | 1.0000 | 1.0000
+3     | Pre-domain labeled data used for training with parallel examples                | 2012.0000  | 2022.0000 | 94.1176  | 94.8594 | 978.0000  | 1031.0000        | 0.7417    | 0.1162      | -0.1166 | 0.3605  | 0.2183 | 0.4187
+9     | methods to achieve best performance and improve f1 score                        | 2012.0000  | 2022.0000 | 97.3262  | 98.0601 | 1011.0000 | 1031.0000        | 0.7339    | 0.0734      | -0.1201 | 0.3777  | 0.3587 | 0.5124
+7     | Comparative analysis of research papers across years                            | 2012.0000  | 2022.0000 | 98.9305  | 99.4180 | 1025.0000 | 1031.0000        | 0.4876    | 0.1345      | 0.0017  | 0.3134  | 0.0405 | 0.1158
+15    | Attention-based encoder for sequence representation                             | 2012.0000  | 2022.0000 | 100.0000 | 99.5150 | 1026.0000 | 1031.0000        | -0.4850   | -0.0289     | -0.0774 | 0.0085  | 0.2303 | 0.4187
+11    | Figure illustrates architecture with example overview                           | 2012.0000  | 2022.0000 | 92.5134  | 92.8225 | 957.0000  | 1031.0000        | 0.3091    | 0.0684      | -0.1095 | 0.4112  | 0.5423 | 0.6380
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/nmf/seed_0/activity_trends.csv. No missing significance test is invented.
+
+Input/reference topic overlap (descriptive; NOT extraction precision/recall)
+Reference provenance | Rows      | Scored    | Mean Jaccard
+---------------------+-----------+-----------+-------------
+acl_supplied         | 4005.0000 | 4005.0000 | 0.5191      
+
+Input/reference temporal agreement
+Topic | Years | Spearman              | Mean absolute gap (fraction)
+------+-------+-----------------------+-----------------------------
+0     | 11    | 0.6272727272727273    | 0.2925009821595321          
+1     | 11    | 0.5181818181818182    | 0.33294873814634984         
+2     | 11    | 0.18181818181818182   | 0.4140011376771808          
+3     | 11    | -0.3727272727272728   | 0.35186999294434657         
+4     | 11    | -0.009090909090909092 | 0.3598489421443977          
+5     | 11    | 0.8000000000000002    | 0.3347597878308357          
+6     | 11    | 0.3727272727272728    | 0.4916683815810726          
+7     | 11    | 0.2687934080711411    | 0.4240679844077851          
+8     | 11    | 0.7636363636363637    | 0.4361063953942184          
+9     | 11    | 0.22727272727272727   | 0.32074472310078544         
+10    | 11    | 0.7636363636363637    | 0.33457867809938363         
+11    | 11    | -0.018181818181818184 | 0.5072942183072714          
+12    | 11    | 0.9090909090909091    | 0.43574281227919587         
+13    | 11    | 0.9363636363636365    | 0.4242322382686556          
+14    | 11    | 0.23636363636363636   | 0.05201924155975797         
+15    | 11    | 0.3221930381127963    | 0.2030175796981082          
+16    | 11    | 0.20909090909090913   | 0.4129244119382138          
+17    | 11    | 0.29090909090909095   | 0.35567334976837395         
+18    | 11    | 0.7454545454545456    | 0.4567668276807169          
+19    | 11    | 0.5636363636363637    | 0.45021205194645036         
+Seed 0 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/training_assignments.csv; labels: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/llm_topic_labels_and_human_template.csv.
+Seed 1 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_1/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_1/training_assignments.csv; labels: absent.
+Seed 2 evidence: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_2/topics.csv; training: /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_2/training_assignments.csv; labels: absent.
+
+LDA — available seeds (no missing seed is counted as zero)
+Seed | K       | NPMI   | Diversity | Silhouette | Outlier rate | Reconstructed               | Availability          
+-----+---------+--------+-----------+------------+--------------+-----------------------------+-----------------------
+0    | 20.0000 | 0.1264 | 0.9200    | NA         | 0.0163       | npmi,diversity,outlier_rate | 12 tables; titles 20  
+1    | 20.0000 | 0.1280 | 0.8750    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+2    | 20.0000 | 0.1301 | 0.8700    | NA         | 0.0163       | npmi,diversity,outlier_rate | 2 tables; titles 0    
+3    | NA      | NA     | NA        | NA         | NA           | NA                          | No usable topics table
+
+Available-seed summaries (sample SD; NA for fewer than two observations)
+Metric       | Observed seeds | Mean    | SD    
+-------------+----------------+---------+-------
+topics       | 3.0000         | 20.0000 | 0.0000
+npmi         | 3.0000         | 0.1282  | 0.0019
+diversity    | 3.0000         | 0.8883  | 0.0275
+silhouette   | 0.0000         | NA      | NA    
+outlier_rate | 3.0000         | 0.0163  | 0.0000
+
+Assignment stability (reconstructed only on identical training units; includes outlier label)
+Seed A | Seed B | Units        | ARI    | Source       
+-------+--------+--------------+--------+--------------
+0      | 1      | 1168951.0000 | 0.2274 | reconstructed
+0      | 2      | 1168951.0000 | 0.2161 | reconstructed
+1      | 2      | 1168951.0000 | 0.2315 | reconstructed
+
+Detailed tables use seed_0: lowest seed with descriptive tables, or lowest available seed if none have them. No best-seed selection.
+
+Topic dictionary (keyword fallback where no LLM title exists)
+Topic | Title / fallback                                                    | Keywords                                                                                             
+------+---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------
+0     | Visual representation of nodes and relationships in data structures | figure; example; graph; shown; shows; node; table; nodes; right; left                                
+1     | Multi-year study of AL et al. publications                          | al; et; 2019; 2018; 2020; 2017; 2016; 2015; 2014; 2021                                               
+2     | Proposed method for paper analysis and study                        | work; section; paper; methods; approach; method; proposed; analysis; study; previous                 
+3     | Evaluation of translation models across different datasets          | domain; evaluation; translation; english; experiments; evaluate; data; different; results; datasets  
+4     | Semantic and syntactic structure parsing with dependency trees      | semantic; structure; syntactic; dependency; parsing; tree; rules; discourse; parser; form            
+5     | 10 examples of sentence pairs in a dataset                          | set; number; test; dataset; training; 10; sentences; size; examples; pairs                           
+6     | log com matrix xi vector github th denotes denote let               | log; com; matrix; xi; vector; github; th; denotes; denote; let                                       
+7     | Neural network model with attention and encoder layers              | attention; model; layer; embeddings; encoder; network; representations; input; neural; representation
+8     | Large-scale data training with detailed annotation and code         | data; training; large; time; annotation; appendix; labeled; scale; code; details                     
+9     | Topic features and POS used in 2008-2012                            | topic; features; pos; used; 2010; 2011; 2008; using; 2009; 2012                                      
+10    | Comparing model performance and accuracy across different models    | performance; results; model; table; better; models; accuracy; baseline; best; state                  
+11    | Algorithm for similarity search in value distribution space         | similarity; space; algorithm; distribution; search; value; values; decoding; distance; model         
+12    | Relation-based event classification with label extraction           | relation; label; knowledge; task; relations; event; classification; labels; sentiment; extraction    
+13    | Model loss and high score probability measure                       | score; loss; scores; high; model; function; higher; probability; recall; measure                     
+14    | Question generation from document text and dialogue                 | question; generation; answer; questions; document; dialogue; text; response; query; summarization    
+15    | Cross-modal NLP Tasks Across Languages and Modalities               | language; text; languages; tasks; natural; nlp; cross; image; speech; visual                         
+16    | Model bias and errors in specific task features                     | model; models; make; bias; features; specific; human; errors; task; information                      
+17    | Identifying entity types in social media news mentions              | entity; news; entities; types; user; mentions; users; social; named; mention                         
+18    | Analysis of word and token level context in source and target texts | word; words; sentence; target; source; level; token; tokens; context; phrase                         
+19    | Fine-tuning pre-trained BERT models for task-specific learning      | model; learning; trained; models; training; pre; bert; task; fine; parameters                        
+
+REFERENCE trends — largest absolute first/last prevalence changes
+Topic | Title                                                               | First year | Last year | First % | Last %  | Last n   | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+---------------------------------------------------------------------+------------+-----------+---------+---------+----------+------------------+-----------+-------------+---------+---------+--------+-------
+1     | Multi-year study of AL et al. publications                          | 2012.0000  | 2022.0000 | 18.7166 | 45.5868 | 470.0000 | 1031.0000        | 26.8702   | 2.1519      | 1.3478  | 3.2094  | 0.0000 | 0.0001
+19    | Fine-tuning pre-trained BERT models for task-specific learning      | 2012.0000  | 2022.0000 | 21.9251 | 43.5500 | 449.0000 | 1031.0000        | 21.6248   | 2.6370      | 1.9632  | 3.2837  | 0.0000 | 0.0003
+14    | Question generation from document text and dialogue                 | 2012.0000  | 2022.0000 | 10.6952 | 30.9408 | 319.0000 | 1031.0000        | 20.2456   | 1.9543      | 1.3715  | 2.1465  | 0.0000 | 0.0001
+7     | Neural network model with attention and encoder layers              | 2012.0000  | 2022.0000 | 11.2299 | 29.9709 | 309.0000 | 1031.0000        | 18.7410   | 2.3860      | 0.1383  | 4.4116  | 0.0405 | 0.0901
+9     | Topic features and POS used in 2008-2012                            | 2012.0000  | 2022.0000 | 34.2246 | 16.5858 | 171.0000 | 1031.0000        | -17.6388  | -2.7994     | -3.6737 | -1.7639 | 0.0008 | 0.0038
+8     | Large-scale data training with detailed annotation and code         | 2012.0000  | 2022.0000 | 30.4813 | 46.8477 | 483.0000 | 1031.0000        | 16.3664   | 0.4936      | -0.1088 | 1.4946  | 0.0609 | 0.1218
+2     | Proposed method for paper analysis and study                        | 2012.0000  | 2022.0000 | 52.9412 | 68.1862 | 703.0000 | 1031.0000        | 15.2451   | 0.3653      | -0.6012 | 1.6752  | 0.3587 | 0.4220
+16    | Model bias and errors in specific task features                     | 2012.0000  | 2022.0000 | 35.2941 | 50.4365 | 520.0000 | 1031.0000        | 15.1424   | 0.9287      | 0.2939  | 1.5791  | 0.0165 | 0.0473
+10    | Comparing model performance and accuracy across different models    | 2012.0000  | 2022.0000 | 37.9679 | 52.4733 | 541.0000 | 1031.0000        | 14.5054   | 0.5609      | 0.1514  | 1.3335  | 0.0099 | 0.0398
+6     | log com matrix xi vector github th denotes denote let               | 2012.0000  | 2022.0000 | 16.0428 | 27.6431 | 285.0000 | 1031.0000        | 11.6003   | 0.6280      | -0.4807 | 1.6921  | 0.2183 | 0.3359
+12    | Relation-based event classification with label extraction           | 2012.0000  | 2022.0000 | 21.9251 | 33.4627 | 345.0000 | 1031.0000        | 11.5375   | 0.4537      | -0.1004 | 1.2453  | 0.2183 | 0.3359
+15    | Cross-modal NLP Tasks Across Languages and Modalities               | 2012.0000  | 2022.0000 | 29.4118 | 40.8341 | 421.0000 | 1031.0000        | 11.4224   | 0.1798      | -0.6190 | 0.9388  | 0.4454 | 0.4949
+5     | 10 examples of sentence pairs in a dataset                          | 2012.0000  | 2022.0000 | 27.8075 | 36.6634 | 378.0000 | 1031.0000        | 8.8559    | 0.5251      | -0.4371 | 1.6260  | 0.3587 | 0.4220
+13    | Model loss and high score probability measure                       | 2012.0000  | 2022.0000 | 26.7380 | 34.1416 | 352.0000 | 1031.0000        | 7.4036    | 0.3949      | -0.2091 | 1.1185  | 0.2830 | 0.4042
+3     | Evaluation of translation models across different datasets          | 2012.0000  | 2022.0000 | 29.4118 | 36.0815 | 372.0000 | 1031.0000        | 6.6697    | 0.2033      | -0.1016 | 0.8064  | 0.1646 | 0.2992
+11    | Algorithm for similarity search in value distribution space         | 2012.0000  | 2022.0000 | 28.8770 | 34.8206 | 359.0000 | 1031.0000        | 5.9436    | -0.4769     | -1.0487 | 0.5551  | 0.5423 | 0.5423
+0     | Visual representation of nodes and relationships in data structures | 2012.0000  | 2022.0000 | 19.7861 | 25.6062 | 264.0000 | 1031.0000        | 5.8201    | 0.0628      | -0.3570 | 0.6812  | 0.3587 | 0.4220
+4     | Semantic and syntactic structure parsing with dependency trees      | 2012.0000  | 2022.0000 | 31.0160 | 28.6130 | 295.0000 | 1031.0000        | -2.4030   | -1.2310     | -2.0552 | -0.5140 | 0.0165 | 0.0473
+18    | Analysis of word and token level context in source and target texts | 2012.0000  | 2022.0000 | 32.6203 | 31.6198 | 326.0000 | 1031.0000        | -1.0005   | -0.9058     | -1.2849 | -0.1001 | 0.0264 | 0.0660
+17    | Identifying entity types in social media news mentions              | 2012.0000  | 2022.0000 | 28.3422 | 29.2919 | 302.0000 | 1031.0000        | 0.9497    | -0.1784     | -0.8519 | 0.4183  | 0.5322 | 0.5423
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/reference_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/reference_trends.csv. No missing significance test is invented.
+
+ACTIVITY trends — largest absolute first/last prevalence changes
+Topic | Title                                                               | First year | Last year | First % | Last %  | Last n    | Last denominator | Change pp | Sen pp/year | CI low  | CI high | p      | BH q  
+------+---------------------------------------------------------------------+------------+-----------+---------+---------+-----------+------------------+-----------+-------------+---------+---------+--------+-------
+9     | Topic features and POS used in 2008-2012                            | 2012.0000  | 2022.0000 | 99.4652 | 62.7546 | 647.0000  | 1031.0000        | -36.7106  | -3.9672     | -5.4400 | -2.2109 | 0.0001 | 0.0013
+7     | Neural network model with attention and encoder layers              | 2012.0000  | 2022.0000 | 59.3583 | 87.9728 | 907.0000  | 1031.0000        | 28.6146   | 3.3236      | 0.8918  | 5.5050  | 0.0264 | 0.0528
+19    | Fine-tuning pre-trained BERT models for task-specific learning      | 2012.0000  | 2022.0000 | 67.3797 | 93.8894 | 968.0000  | 1031.0000        | 26.5097   | 2.9016      | 2.2106  | 3.7307  | 0.0001 | 0.0013
+14    | Question generation from document text and dialogue                 | 2012.0000  | 2022.0000 | 51.8717 | 74.9758 | 773.0000  | 1031.0000        | 23.1041   | 2.6008      | 1.5603  | 3.4413  | 0.0003 | 0.0022
+4     | Semantic and syntactic structure parsing with dependency trees      | 2012.0000  | 2022.0000 | 88.2353 | 73.6178 | 759.0000  | 1031.0000        | -14.6174  | -1.7868     | -2.7241 | -0.7386 | 0.0099 | 0.0284
+1     | Multi-year study of AL et al. publications                          | 2012.0000  | 2022.0000 | 91.4439 | 99.4180 | 1025.0000 | 1031.0000        | 7.9742    | 0.8747      | 0.2317  | 1.4422  | 0.0016 | 0.0080
+11    | Algorithm for similarity search in value distribution space         | 2012.0000  | 2022.0000 | 95.1872 | 88.8458 | 916.0000  | 1031.0000        | -6.3414   | -0.6368     | -1.0460 | -0.0163 | 0.0264 | 0.0528
+18    | Analysis of word and token level context in source and target texts | 2012.0000  | 2022.0000 | 95.7219 | 89.9127 | 927.0000  | 1031.0000        | -5.8092   | -0.7931     | -1.2109 | -0.2056 | 0.0165 | 0.0414
+15    | Cross-modal NLP Tasks Across Languages and Modalities               | 2012.0000  | 2022.0000 | 85.0267 | 89.9127 | 927.0000  | 1031.0000        | 4.8860    | 0.1079      | -0.7108 | 0.6278  | 0.5423 | 0.5423
+0     | Visual representation of nodes and relationships in data structures | 2012.0000  | 2022.0000 | 93.5829 | 88.7488 | 915.0000  | 1031.0000        | -4.8341   | -0.4426     | -0.7225 | -0.0000 | 0.0423 | 0.0770
+17    | Identifying entity types in social media news mentions              | 2012.0000  | 2022.0000 | 83.9572 | 79.7284 | 822.0000  | 1031.0000        | -4.2288   | -0.6298     | -1.0335 | -0.3338 | 0.0057 | 0.0190
+12    | Relation-based event classification with label extraction           | 2012.0000  | 2022.0000 | 80.7487 | 84.3841 | 870.0000  | 1031.0000        | 3.6354    | 0.2588      | -0.2760 | 0.8378  | 0.2183 | 0.2569
+6     | log com matrix xi vector github th denotes denote let               | 2012.0000  | 2022.0000 | 91.9786 | 95.2473 | 982.0000  | 1031.0000        | 3.2687    | 0.3285      | 0.1618  | 0.8690  | 0.0049 | 0.0190
+10    | Comparing model performance and accuracy across different models    | 2012.0000  | 2022.0000 | 94.6524 | 97.6722 | 1007.0000 | 1031.0000        | 3.0198    | 0.1398      | -0.1022 | 0.5565  | 0.2183 | 0.2569
+5     | 10 examples of sentence pairs in a dataset                          | 2012.0000  | 2022.0000 | 98.3957 | 96.3143 | 993.0000  | 1031.0000        | -2.0815   | -0.2891     | -0.6245 | 0.2033  | 0.1210 | 0.1613
+16    | Model bias and errors in specific task features                     | 2012.0000  | 2022.0000 | 97.8610 | 96.0233 | 990.0000  | 1031.0000        | -1.8377   | 0.1980      | -0.1838 | 0.4800  | 0.3587 | 0.3776
+3     | Evaluation of translation models across different datasets          | 2012.0000  | 2022.0000 | 86.6310 | 88.1668 | 909.0000  | 1031.0000        | 1.5358    | 0.1386      | -0.2644 | 0.7206  | 0.2830 | 0.3144
+13    | Model loss and high score probability measure                       | 2012.0000  | 2022.0000 | 95.7219 | 94.4714 | 974.0000  | 1031.0000        | -1.2505   | -0.1962     | -0.4290 | 0.0366  | 0.0866 | 0.1237
+2     | Proposed method for paper analysis and study                        | 2012.0000  | 2022.0000 | 98.3957 | 99.5150 | 1026.0000 | 1031.0000        | 1.1193    | 0.1134      | -0.0174 | 0.4138  | 0.0602 | 0.0926
+8     | Large-scale data training with detailed annotation and code         | 2012.0000  | 2022.0000 | 95.7219 | 95.8293 | 988.0000  | 1031.0000        | 0.1074    | 0.2581      | -0.0314 | 0.4622  | 0.0602 | 0.0926
+Sources: prevalence /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/activity_prevalence.csv; saved statistical trends /lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract/results/qwen/all/216906.cm_20260910T211619/acl/topics/lda/seed_0/activity_trends.csv. No missing significance test is invented.
+
+Input/reference topic overlap (descriptive; NOT extraction precision/recall)
+Reference provenance | Rows      | Scored    | Mean Jaccard
+---------------------+-----------+-----------+-------------
+acl_supplied         | 4005.0000 | 4005.0000 | 0.4924      
+
+Input/reference temporal agreement
+Topic | Years | Spearman             | Mean absolute gap (fraction)
+------+-------+----------------------+-----------------------------
+0     | 11    | 0.21818181818181823  | 0.5288940828350547          
+1     | 11    | 0.8454545454545455   | 0.44461625525847487         
+2     | 11    | 0.5727272727272729   | 0.03951247056105467         
+3     | 11    | -0.19178282129043372 | 0.37519130061768635         
+4     | 11    | 0.9181818181818183   | 0.35840260633693233         
+5     | 11    | 0.21412356236175645  | 0.4746705059312543          
+6     | 11    | 0.5636363636363637   | 0.5619502608884089          
+7     | 11    | 0.9181818181818183   | 0.3790741193147315          
+8     | 11    | -0.3234632537805257  | 0.3275174229531905          
+9     | 11    | 0.9272727272727275   | 0.41632598553230443         
+10    | 11    | 0.23636363636363636  | 0.25272850137416775         
+11    | 11    | 0.8000000000000002   | 0.4213668312690997          
+12    | 11    | 0.4965844318602437   | 0.38098322628709236         
+13    | 11    | -0.13211879379767952 | 0.46667653648416585         
+14    | 11    | 0.8636363636363636   | 0.3080161668956808          
+15    | 11    | 0.5727272727272729   | 0.35053775928019576         
+16    | 11    | 0.7181818181818183   | 0.2975204408255532          
+17    | 11    | 0.7545454545454545   | 0.37985234170274773         
+18    | 11    | 0.7272727272727273   | 0.41386205767496753         
+19    | 11    | 0.881818181818182    | 0.3823169194488893          
+BERTOPIC: no saved method directory; unavailable, not a failed score.
+
+FORECASTING
+Unavailable: no usable saved records.
+No completed forecast summary/fold results found. Do not claim predictive improvement from these artifacts.
+
+PAPER/APPENDIX STATUS NOTE:
+This acl snapshot contains NMF seeds 0,1,2,3,4; LDA seeds 0,1,2.
+Only the observed seeds contribute to reported summaries. Missing seeds/methods were not imputed.
+These artifacts support descriptive analysis only; no forecasting result is available.
+
+READ WARNINGS / SKIPPED FILES
+None detected.

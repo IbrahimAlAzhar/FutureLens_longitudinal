@@ -1,0 +1,5 @@
+# Optional BERTopic arm, using a locally cached embedding model.
+bertopic>=0.16,<0.18
+sentence-transformers>=3,<6
+umap-learn>=0.5.5,<0.6
+hdbscan>=0.8.33,<0.9
