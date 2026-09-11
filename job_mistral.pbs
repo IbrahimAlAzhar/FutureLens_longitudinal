@@ -7,9 +7,9 @@ set -euo pipefail
 # Existing references only. No extraction or missing-reference fallback.
 # qsub -v NUM_SAMPLES=10 job_mistral.pbs
 # qsub -v NUM_SAMPLES=-1 job_mistral.pbs
-export CODE_DIR=${CODE_DIR:-/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/exp_curr_without_extract}
-export DATA_DIR=${DATA_DIR:-/lstr/sahara/datalab-ml/ibrahim/limagents_update/futureScope/data}
-export EMBEDDING_MODEL=${EMBEDDING_MODEL:-/lstr/sahara/datalab-ml/ibrahim/models/all-MiniLM-L6-v2}
+export CODE_DIR=${CODE_DIR:-futureScope/exp_curr_without_extract}
+export DATA_DIR=${DATA_DIR:-/futureScope/data}
+export EMBEDDING_MODEL=${EMBEDDING_MODEL:-models/all-MiniLM-L6-v2}
 export NUM_SAMPLES=${NUM_SAMPLES:-10}
 export METHODS=${METHODS:-"nmf lda bertopic"}
 cd "$CODE_DIR"
